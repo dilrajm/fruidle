@@ -7,7 +7,7 @@
         <script src="fruidlecode.js"></script>
     </head>
 
-    <body>
+    <body onload="innitGame()">
       <section id="Homepage" class="page active">
         <h1>Fruidle</h1>
         <div id="How_to_play">
@@ -23,19 +23,19 @@
 
             <p>
                 Examples 
-                <div id="Ex.1">
+                <div class="Example">
                     <p id="slot1">🍐</p>
                     <p id="slot2">🥝</p>
-                    <p id="slot3">🍈</p>
+                    <p id="slot3">🍏</p>
                 </div>
                 The pear 🍐 is in the sequence and in the right spot.
-                <div id="Ex.1">
+                <div class="Example">
                     <p id="slot4">🥝</p>
                     <p id="slot5">🍈</p>
                     <p id="slot6">🍏</p>
                 </div>
                 The melon 🍈 is in the sequence but in the wrong spot.
-                <div id="Ex.1">
+                <div class="Example">
                     <p id="slot7">🍏</p>
                     <p id="slot8">🍏</p>
                     <p id="slot9">🥝</p>
@@ -44,6 +44,7 @@
             </p>
            
         </div>
+
         <div id="Level_Select">
         <h3>Select Level</h3>
         <button onclick="startlevel(1)">Level 1</button>
@@ -51,15 +52,187 @@
         <button onclick="startlevel(3)">Level 3</button>
         </div>
       </section>
+
       <section id="Level_1" class="page">
-        <button onclick="startlevel(0)">Home</button>
+
+        <div class="Top_Bar">
+        <button class="help">?</button> <button class="home" onclick="startlevel(0)">Home</button>
+        </div>
+
+        <h2>Level 1</h2>
+
+        <div id="timer1" class="counter"></div>
+        <div class="grid">
+            <div class="row">
+                <div class="cell"></div>
+                <div class="cell"></div>
+            </div>
+            <div class="row">
+                <div class="cell"></div>
+                <div class="cell"></div>
+            </div>
+            <div class="row">
+                <div class="cell"></div>
+                <div class="cell"></div>
+            </div>
+            <div class="row">
+                <div class="cell"></div>
+                <div class="cell"></div>
+            </div>
+            <div class="row">
+                <div class="cell"></div>
+                <div class="cell"></div>
+            </div>
+        </div>
+
+        <div class="buttons">
+            <button class="fruit" data-fruit="🍊">🍊</button>
+            <button class="fruit" data-fruit="🍋">🍋</button>
+            <button class="fruit" data-fruit="🍌">🍌</button>
+            <button class="fruit" data-fruit="🍍">🍍</button>
+
+            <button class="back">❌</button>
+            <button class="enter">🚀</button>
+        </div>
+
       </section>
+
       <section id="Level_2" class="page">
-        <button onclick="startlevel(0)">Home</button>
+
+        <div class="Top_Bar">
+        <button class="help">?</button> <button class="home" onclick="startlevel(0)">Home</button>
+        </div>
+
+        <h2>Level 2</h2>
+
+        <div id="timer2" class="counter"></div>
+        <div class="grid">
+            <div class="row">
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+            </div>
+            <div class="row">
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+            </div>
+            <div class="row">
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+            </div>
+            <div class="row">
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+            </div>
+            <div class="row">
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+            </div>
+        </div>
+
+        <div class="buttons">
+            <button class="fruit" data-fruit="🍏">🍏</button>
+            <button class="fruit" data-fruit="🍐">🍐</button>
+            <button class="fruit" data-fruit="🥝">🥝</button>
+            <button class="fruit" data-fruit="🍈">🍈</button>
+
+            <button class="back">❌</button>
+            <button class="enter">🚀</button>
+        </div>
+
+
       </section>
+
       <section id="Level_3" class="page">
-        <button onclick="startlevel(0)">Home</button>
+
+        <div class="Top_Bar">
+        <button class="help">?</button> <button class="home" onclick="startlevel(0)">Home</button>
+        </div>
+
+        <h2>Level 3</h2>
+
+        <div id="timer3" class="counter"></div>
+        <div class="grid">
+            <div class="row">
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+            </div>
+            <div class="row">
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+            </div>
+            <div class="row">
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+            </div>
+            <div class="row">
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+            </div>
+            <div class="row">
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+            </div>
+        </div>
+
+        <div class="buttons">
+            <button class="fruit" data-fruit="🍎">🍎</button>
+            <button class="fruit" data-fruit="🍓">🍓</button>
+            <button class="fruit" data-fruit="🍒">🍒</button>
+            <button class="fruit" data-fruit="🍉">🍉</button>
+            <!--Think Fruit buttons should have same function but back and enter should have seperate functions, when we do javascript.-->
+            <button class="back">❌</button>
+            <button class="enter">🚀</button>
+        </div>
       </section>
+
+      <div id="Too_easy" class="temp-feedback">Too Easy!</div>
+      <div id="Breeze" class="temp-feedback">That was a Breeze...</div>
+      <div id="Good_work" class="temp-feedback">Good Work!</div>
+      <div id="Fourth" class="temp-feedback">Fourth Times the Charm...</div>
+      <div id="Too_close" class="temp-feedback">Too Close!</div>
+
+      <div id="Win_popup" class="pop_up">
+        <button class="close_button">X</button>
+        <h2>You Win!</h2>
+        <p>Time: <span id="time" class="counter"></span></p>
+        <p>Highscore: <span id="top_count"></span></p>
+        <button class="home" onclick="startlevel(0)">Home</button>
+      </div>
+
+      <div id="Lose_popup" class="pop_up">
+        <button class="close_button">X</button>
+        <h2>You Lose...</h2>
+        <button id="Again">Try Again</button>
+        <p>Highscore: <span id="top_count"></span></p>
+        <button class="home" onclick="startlevel(0)">Home</button>
+      </div>
+
+      <div id="rules_popup" class="pop_up">
+        <button class="close_button">X</button>
+        <div id="rules_content">
+            <!--Duplicate rules content here with javascript-->
+        </div>
+      </div>
     </body>
 </html>
 

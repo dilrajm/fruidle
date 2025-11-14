@@ -6,6 +6,15 @@
     display: block;
 }
 
+.pop_up {
+    display: none;
+}
+
+.temp-feedback {
+    display: none;
+}
+
+
 #slot1, #slot2, #slot3, #slot4, #slot5, #slot6, #slot7, #slot8, #slot9 {
     border: 2px solid black;
     display: inline-block;
@@ -22,4 +31,10 @@
 
 #slot9 {
     background-color: antiquewhite;
+}
+
+.cell {
+    border: 2px solid black;
+    display: inline-block;
+    padding: 30px;
 }
