@@ -9,9 +9,8 @@
     </head>
 
     <body onload="innitGame()">
-        <h2 id="image"><img src="Fruidle_Images/title.png"></h2>
-      <div id="container">
-        <section id="Homepage" class="page active">
+      <section id="Homepage" class="page active">
+        <img id="title" src="Fruidle_Images/title.png">
         <div id="How_to_play">
             <h3>How to Play</h3>
             <p id="how">
@@ -19,25 +18,34 @@
                 Guess must be 2, 3 or 5 fruits long depending on the level
                 The colour of the tiles will change to show how close your guess was to the fruit sequence
             </p>
-            <strong>Examples </strong>
-            <div class="Example">
-                    <p id="slot1">🍐</p>
-                    <p id="slot2">🥝</p>
-                    <p id="slot3">🍏</p>
-            </div>
-            <p>The pear 🍐 is in the sequence and in the right spot.</p>
-            <div class="Example">
-                    <p id="slot4">🥝</p>
-                    <p id="slot5">🍈</p>
-                    <p id="slot6">🍏</p>
-            </div>
-            <p>The melon 🍈 is in the sequence but in the wrong spot.</p>
-            <div class="Example">
-                    <p id="slot7">🍏</p>
-                    <p id="slot8">🍏</p>
-                    <p id="slot9">🥝</p>
-            </div>
-            <p>The kiwifruit 🥝 is not in the sequence in any spot.</p>
+
+            <ul>
+                <li>Guess must be 2, 3 or 5 fruits long depending on the level</li>
+                <li>The colour of the tiles will change to show how close your guess was to the fruit sequence</li>
+            </ul>
+
+            <p>
+                Examples 
+                <div class="Example">
+                    <img id="slot1" src="Fruidle_Images/pear.png">
+                    <img id="slot2" src="Fruidle_Images/kiwi.png">
+                    <img id="slot3" src="Fruidle_Images/grn_apple.png">
+                </div>
+                The pear 🍐 is in the sequence and in the right spot.
+                <div class="Example">
+                    <img id="slot4" src="Fruidle_Images/kiwi.png">
+                    <img id="slot5" src="Fruidle_Images/melon.png">
+                    <img id="slot6" src="Fruidle_Images/grn_apple.png">
+                </div>
+                The melon 🍈 is in the sequence but in the wrong spot.
+                <div class="Example">
+                    <img id="slot7" src="Fruidle_Images/grn_apple.png">
+                    <img id="slot8" src="Fruidle_Images/grn_apple.png">
+                    <img id="slot9" src="Fruidle_Images/kiwi.png">
+                </div>
+                The kiwifruit 🥝 is not in the sequence in any spot.
+            </p>
+           
         </div>
 
         <div id="Level_Select">
