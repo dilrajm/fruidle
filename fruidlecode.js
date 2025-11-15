@@ -1,0 +1,7 @@
+function innitGame() {
+    
+}
+
+function startLevel() {
+    
+}
