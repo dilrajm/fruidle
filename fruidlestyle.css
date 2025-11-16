@@ -14,14 +14,15 @@ body {
 }
 
 div#How_to_play {
-    background-color: rgba(255, 255, 255, 0.7); 
+    background-color: rgba(17, 16, 16, 0.7); 
     border: 2px solid #000;     
     border-radius: 10px;   
-    padding: 20px;             
-    width: 300px;                
+    padding: 30px;             
+    width:80%;                
     height: auto;              
     margin: 10px auto;           
     box-shadow: 0 4px 8px rgba(0,0,0,0.2); 
+    color:white;
 }
  
 #pear, #kiwi, #melon {
@@ -57,15 +58,15 @@ div#How_to_play {
 }
 
 #slot1 {
-    background-color: rgb(25, 129, 25);
+    background-color: rgb(25, 129, 25,0.5);
 }
 
 #slot5 {
-    background-color: rgb(255, 255, 0);
+    background-color: rgb(255, 255, 0,0.5); 
 }
 
 #slot9 {
-    background-color: slategray;
+    background-color: rgb(111, 128, 144,0.5);
 }
 
 .cell {
@@ -112,4 +113,43 @@ h2#image {
 h2#image img{
     display:block;
     margin: 0 auto;
+}
+
+.fruit {
+    width:50px;
+    height:50px;
+    padding:30px;
+    margin-top:20px;
+    background-color: rgb(46, 44, 44);
+    border:none;
+    border-radius: 5px;
+}
+
+.back {
+    height:100px;
+    width:100px;
+    background-color: rgb(223, 25, 25);
+}
+
+.enter {
+    height:200px;
+    width:100px;
+}
+
+.Top_Bar {
+    display:flex;
+    justify-content: flex-end;
+    gap:10px;
+}
+.help {
+    width:75px;
+    height:100px;
+}
+
+.home {
+    width:100px;
+    height:100px;
+}
+#Level_Select h3{
+    color:white;
 }
