@@ -18,7 +18,7 @@ div#How_to_play {
     border: 2px solid #000;     
     border-radius: 10px;   
     padding: 30px;             
-    width:80%;                
+    width:60%;                
     height: auto;              
     margin: 10px auto;           
     box-shadow: 0 4px 8px rgba(0,0,0,0.2); 
@@ -168,17 +168,6 @@ h2#image img{
 }
 
 
-.back {
-    height:100px;
-    width:100px;
-    background-color: rgb(223, 25, 25);
-}
-
-.enter {
-    height:200px;
-    width:100px;
-}
-
 .Top_Bar {
     display:flex;
     justify-content: flex-end;
@@ -192,6 +181,10 @@ h2#image img{
 .home {
     width:100px;
     height:100px;
+}
+
+.fruit_button, .del, .go, .help {
+    width: 40px;
 }
 #Level_Select h3{
     color:white;

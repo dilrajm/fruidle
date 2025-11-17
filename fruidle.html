@@ -14,13 +14,13 @@
 
     <!-----------------------------------HOME PAGE --------------------------------->
     <section id="Homepage" class="page active">
-        <h2 id="image"><img src="Fruidle_Images/title.png"></h2>
+        <h2 id="image"><img id="title" src="Fruidle_Images/title.png"></h2>
 
         <div id="How_to_play">
             <h3>How to Play</h3>
                 <p id="how">
                     Use the fruit keyboard to guess fruit sequence in 5 tries!
-                    Guess must be 2, 3 or 5 fruits long depending on the level
+                    Guess must be 3, 5 or 7 fruits long depending on the level
                     The colour of the tiles will change to show how close your guess was to the fruit sequence
                 </p>
                 Examples 
@@ -46,9 +46,9 @@
 
         <div id="Level_Select">
             <h3>Select Level</h3>
-            <button onclick="startlevel(1)">Level 1</button>
-            <button onclick="startlevel(2)">Level 2</button>
-            <button onclick="startlevel(3)">Level 3</button>
+            <img onclick="startlevel(1)" src="Fruidle_Images/level1_button.png">
+            <img onclick="startlevel(2)" src="Fruidle_Images/level2_button.png">
+            <img onclick="startlevel(3)" src="Fruidle_Images/level3_button.png">
         </div>
     </section>
 
@@ -58,7 +58,7 @@
     <section id="Level_1" class="page">
 
         <div class="Top_Bar">
-        <button class="help">?</button> <button class="home" onclick="startlevel(0)">Home</button>
+        <img class="help" src="Fruidle_Images/question_mark_button.png"> <img class="home" onclick="startlevel(0)" src="Fruidle_Images/home_button.png">
         </div>
 
         <h2>Level 1</h2>
@@ -93,13 +93,13 @@
         </div>
 
         <div class="buttons">
-            <button class="fruit" data-fruit="🍊">🍊</button>
-            <button class="fruit" data-fruit="🍋">🍋</button>
-            <button class="fruit" data-fruit="🍌">🍌</button>
-            <button class="fruit" data-fruit="🍍">🍍</button>
+            <button class="fruit" data-fruit="🍏"><img class="fruit_button" src="Fruidle_Images/grn_apple.png"></button>
+            <button class="fruit" data-fruit="🍐"><img class="fruit_button" src="Fruidle_Images/pear.png"></button>
+            <button class="fruit" data-fruit="🥝"><img class="fruit_button" src="Fruidle_Images/kiwi.png"></button>
+            <button class="fruit" data-fruit="🍈"><img class="fruit_button" src="Fruidle_Images/melon.png"></button>
 
-            <button class="back">❌</button>
-            <button class="enter">🚀</button>
+            <img class="del" onclick="" src="Fruidle_Images/delete_button.png">
+            <img class="go" onclick="" src="Fruidle_Images/enter_button.png">
         </div>
 
     </section>
@@ -109,7 +109,7 @@
     <section id="Level_2" class="page">
 
         <div class="Top_Bar">
-        <button class="help">?</button> <button class="home" onclick="startlevel(0)">Home</button>
+        <img class="help" src="Fruidle_Images/question_mark_button.png"> <img class="home" onclick="startlevel(0)" src="Fruidle_Images/home_button.png">
         </div>
 
         <h2>Level 2</h2>
@@ -154,13 +154,13 @@
         </div>
 
         <div class="buttons">
-            <button class="fruit" data-fruit="🍏">🍏</button>
-            <button class="fruit" data-fruit="🍐">🍐</button>
-            <button class="fruit" data-fruit="🥝">🥝</button>
-            <button class="fruit" data-fruit="🍈">🍈</button>
+            <button class="fruit" data-fruit="🍋"><img class="fruit_button" src="Fruidle_Images/lemon.png"></button>
+            <button class="fruit" data-fruit="🍌"><img class="fruit_button" src="Fruidle_Images/banana.png"></button>
+            <button class="fruit" data-fruit="🍊"><img class="fruit_button" src="Fruidle_Images/tangerine.png"></button>
+            <button class="fruit" data-fruit="🍍"><img class="fruit_button" src="Fruidle_Images/pineapple.png"></button>
 
-            <button class="back">❌</button>
-            <button class="enter">🚀</button>
+            <img class="del" onclick="" src="Fruidle_Images/delete_button.png">
+            <img class="go" onclick="" src="Fruidle_Images/enter_button.png">
         </div>
 
 
@@ -171,7 +171,7 @@
     <section id="Level_3" class="page">
 
         <div class="Top_Bar">
-        <button class="help">?</button> <button class="home" onclick="startlevel(0)">Home</button>
+        <img class="help" src="Fruidle_Images/question_mark_button.png"> <img class="home" onclick="startlevel(0)" src="Fruidle_Images/home_button.png">
         </div>
 
         <h2>Level 3</h2>
@@ -226,13 +226,13 @@
         </div>
 
         <div class="buttons">
-            <button class="fruit" data-fruit="🍎">🍎</button>
-            <button class="fruit" data-fruit="🍓">🍓</button>
-            <button class="fruit" data-fruit="🍒">🍒</button>
-            <button class="fruit" data-fruit="🍉">🍉</button>
-            <!--Think Fruit buttons should have same function but back and enter should have seperate functions, when we do javascript.-->
-            <button class="back">❌</button>
-            <button class="enter">🚀</button>
+            <button class="fruit" data-fruit="🍎"><img class="fruit_button" src="Fruidle_Images/apple.png"></button>
+            <button class="fruit" data-fruit="🍓"><img class="fruit_button" src="Fruidle_Images/strawberry.png"></button>
+            <button class="fruit" data-fruit="🍒"><img class="fruit_button" src="Fruidle_Images/cherries.png"></button>
+            <button class="fruit" data-fruit="🍉"><img class="fruit_button" src="Fruidle_Images/watermelon.png"></button>
+            
+            <img class="del" onclick="" src="Fruidle_Images/delete_button.png">
+            <img class="go" onclick="" src="Fruidle_Images/enter_button.png">
         </div>
     </section>
 
@@ -249,7 +249,7 @@
         <h2>You Win!</h2>
         <p>Time: <span id="time" class="counter"></span></p>
         <p>Highscore: <span id="top_count"></span></p>
-        <button class="home" onclick="startlevel(0)">Home</button>
+         <img class="home" onclick="startlevel(0)" src="Fruidle_Images/white_home_button.png">
       </div>
 
       <div id="Lose_popup" class="pop_up">
@@ -257,7 +257,7 @@
         <h2>You Lose...</h2>
         <button id="Again">Try Again</button>
         <p>Highscore: <span id="top_count"></span></p>
-        <button class="home" onclick="startlevel(0)">Home</button>
+        <img class="home" onclick="startlevel(0)" src="Fruidle_Images/white_home_button.png">
       </div>
 
       <div id="rules_popup" class="pop_up">
@@ -278,7 +278,7 @@
             <h3>How to Play</h3>
             <p id="how">
                 Use the fruit keyboard to guess fruit sequence in 5 tries!
-                Guess must be 2, 3 or 5 fruits long depending on the level
+                Guess must be 3, 5 or 7 fruits long depending on the level
                 The colour of the tiles will change to show how close your guess was to the fruit sequence
             </p>
             Examples 
