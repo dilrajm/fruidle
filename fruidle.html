@@ -1,26 +1,29 @@
 <!DOCTYPE html>
 <html lang="En">
-    <head>
-        <meta charset="UTF-8" name="viewport" content="width=device-width , initial-scale=1">
-        <link rel="stylesheet" href="fruidlestyle.css">
-        <link rel="icon" href="Fruidle_Images/Favicon.png">
-        <title>Play Fruidle</title>
-        <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
-        <script src="fruidlecode.js"></script>
-    </head>
+<head>
+    <meta charset="UTF-8" name="viewport" content="width=device-width , initial-scale=1">
+    <link rel="stylesheet" href="fruidlestyle.css">
+    <link rel="icon" href="Fruidle_Images/Favicon.png">
+    <title>Play Fruidle</title>
+    <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+    
+</head>
 
-    <body onload="innitGame()">
-      <div id="container">
-        <section id="Homepage" class="page active">
-            <h2 id="image"><img src="Fruidle_Images/title.png"></h2>
+<body onload="innitGame()">
+<div id="container">
+
+    <!-----------------------------------HOME PAGE --------------------------------->
+    <section id="Homepage" class="page active">
+        <h2 id="image"><img src="Fruidle_Images/title.png"></h2>
+
         <div id="How_to_play">
             <h3>How to Play</h3>
-            <p id="how">
-                Use the fruit keyboard to guess fruit sequence in 5 tries!
-                Guess must be 2, 3 or 5 fruits long depending on the level
-                The colour of the tiles will change to show how close your guess was to the fruit sequence
-            </p>
-            Examples 
+                <p id="how">
+                    Use the fruit keyboard to guess fruit sequence in 5 tries!
+                    Guess must be 2, 3 or 5 fruits long depending on the level
+                    The colour of the tiles will change to show how close your guess was to the fruit sequence
+                </p>
+                Examples 
                 <div class="Example">
                     <img id="slot1" src="Fruidle_Images/pear.png">
                     <img id="slot2" src="Fruidle_Images/kiwi.png">
@@ -38,19 +41,21 @@
                     <img id="slot8" src="Fruidle_Images/grn_apple.png">
                     <img id="slot9" src="Fruidle_Images/kiwi.png">
                 </div>
-                The kiwifruit <span><img id="kiwi" src="Fruidle_Images/kiwi.png"></span> is not in the sequence in any spot.
-            </p>
+                The kiwifruit <span><img id="kiwi" src="Fruidle_Images/kiwi.png"></span> is not in the sequence in any spot. 
         </div>
 
         <div id="Level_Select">
-        <h3>Select Level</h3>
-        <button onclick="startlevel(1)">Level 1</button>
-        <button onclick="startlevel(2)">Level 2</button>
-        <button onclick="startlevel(3)">Level 3</button>
+            <h3>Select Level</h3>
+            <button onclick="startlevel(1)">Level 1</button>
+            <button onclick="startlevel(2)">Level 2</button>
+            <button onclick="startlevel(3)">Level 3</button>
         </div>
-      </section>
+    </section>
 
-      <section id="Level_1" class="page">
+
+    <!----------------------------------------LEVEL 1------------------------------------>
+
+    <section id="Level_1" class="page">
 
         <div class="Top_Bar">
         <button class="help">?</button> <button class="home" onclick="startlevel(0)">Home</button>
@@ -97,9 +102,11 @@
             <button class="enter">🚀</button>
         </div>
 
-      </section>
+    </section>
 
-      <section id="Level_2" class="page">
+    <!------------------------------------------LEVEL 2------------------------------------->
+
+    <section id="Level_2" class="page">
 
         <div class="Top_Bar">
         <button class="help">?</button> <button class="home" onclick="startlevel(0)">Home</button>
@@ -157,9 +164,11 @@
         </div>
 
 
-      </section>
+    </section>
 
-      <section id="Level_3" class="page">
+    <!----------------------------------------LEVEL 3------------------------------------------>
+
+    <section id="Level_3" class="page">
 
         <div class="Top_Bar">
         <button class="help">?</button> <button class="home" onclick="startlevel(0)">Home</button>
@@ -225,7 +234,9 @@
             <button class="back">❌</button>
             <button class="enter">🚀</button>
         </div>
-      </section>
+    </section>
+
+    <!---FEEDBACK POPUPS-->
 
       <div id="Too_easy" class="temp-feedback">Too Easy!</div>
       <div id="Breeze" class="temp-feedback">That was a Breeze...</div>
@@ -255,8 +266,45 @@
             <!--Duplicate rules content here with javascript-->
         </div>
       </div>
+      
+</div> <!--END CONTAINER-->
+
+<!-----------------MODAL CONTAINER----------------------->
+<div id ="HowToPlayModal" class = "modal-overlay">
+    <div class ="modal-content">
+        <span id ="closeHowToPlay" class="close-button">X</span>
+
+        <div class="How_to_play">
+            <h3>How to Play</h3>
+            <p id="how">
+                Use the fruit keyboard to guess fruit sequence in 5 tries!
+                Guess must be 2, 3 or 5 fruits long depending on the level
+                The colour of the tiles will change to show how close your guess was to the fruit sequence
+            </p>
+            Examples 
+            <div class="Example">
+                <img id="slot1" src="Fruidle_Images/pear.png">
+                <img id="slot2" src="Fruidle_Images/kiwi.png">
+                <img id="slot3" src="Fruidle_Images/grn_apple.png">
+            </div>
+            The pear <span><img id="pear" src="Fruidle_Images/pear.png"></span> is in the sequence and in the right spot.
+            <div class="Example">
+                <img id="slot4" src="Fruidle_Images/kiwi.png">
+                <img id="slot5" src="Fruidle_Images/melon.png">
+                <img id="slot6" src="Fruidle_Images/grn_apple.png">
+            </div>
+            The melon <span><img id="melon" src="Fruidle_Images/melon.png"></span> is in the sequence but in the wrong spot.
+            <div class="Example">
+                <img id="slot7" src="Fruidle_Images/grn_apple.png">
+                <img id="slot8" src="Fruidle_Images/grn_apple.png">
+                <img id="slot9" src="Fruidle_Images/kiwi.png">
+            </div>
+            The kiwifruit <span><img id="kiwi" src="Fruidle_Images/kiwi.png"></span> is not in the sequence in any spot.
+        </div>
     </div>
-    </body>
+</div>
+<script src="fruidlecode.js"></script>
+</body>
 </html>
 
 
