@@ -15,7 +15,7 @@ section.page {
     width: 100%;
     min-height: 100vh;  
 }
-#Level_1, #Level_2, #Level_3 {
+#Level_2, #Level_3 {
     padding-bottom: 400px; /* pushes content down */
 }
 
@@ -314,9 +314,7 @@ h2#image img{
     gap: 10px;
 }
 
-.Top_Bar img {
-    display: block;
-}
+
 
 img.help {
     width:75px;
