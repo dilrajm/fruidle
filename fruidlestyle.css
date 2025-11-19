@@ -1,24 +1,61 @@
+
+
+  
+html,body {
+    min-height:100vh;
+    width:100%;
+    margin:0;
+    padding:0;
+}
 body {
     font-family: 'VT323',monospace;
-    background-image:url("Fruidle_Images/homepage_background2.png");
-    background-size:cover;
-    background-repeat:no-repeat;
-    background-position:center;
-    font-size:1.6rem;
+    font-size:1.7rem;
+}
+section.page {
+    width: 100%;
+    min-height: 100vh;  
+}
+#Level_1, #Level_2, #Level_3 {
+    padding-bottom: 400px; /* pushes content down */
 }
 
+#Homepage {
+    background-image:url("Fruidle_Images/homepage_background2.png");
+    background-size: 100% 100%;      
+    background-repeat: no-repeat;
+    background-position: center;
+    min-height: 100vh;  
+}
+#Level_1{
+    background-image:url("Fruidle_Images/level1_background.png");
+}
+#Level_2{
+    background-image:url("Fruidle_Images/level2_background.png");
+
+}
+#Level_3{
+    background-image:url("Fruidle_Images/level3_background.png");
+
+}
+#Level_1, #Level_2, #Level_3 {
+    background-size: 100% 100%;       /* scales nicely without stretching */
+    background-repeat: no-repeat;
+    background-position: center;
+    min-height: 100vh;            /* ensures level fills viewport */
+}
 #container {
   max-width: 100%;
   margin: 0px auto;
   text-align: center;
+  box-sizing: border-box;
 }
 
 div#How_to_play {
     background-color: rgba(17, 16, 16, 0.7); 
     border: 2px solid #000;     
     border-radius: 10px;   
-    padding: 30px;             
-    width:60%;                
+    padding: 40px;             
+    width: 65%;                
     height: auto;              
     margin: 10px auto;           
     box-shadow: 0 4px 8px rgba(0,0,0,0.2); 
@@ -43,6 +80,7 @@ div#How_to_play {
     position: relative;
     width: 85%;
     max-width: 900px;
+    font-size:1.4rem;
 }
 
 .close-button{
@@ -53,7 +91,6 @@ div#How_to_play {
     cursor: pointer;
     color: white;
 }
-
  
 #pear, #kiwi, #melon {
     width: 30px;
@@ -118,30 +155,67 @@ div#How_to_play {
 
 #Level_Select {
     display: flex;
-    flex-direction:column;
-    align-items:center;
-    gap: 15px;
+    flex-direction: column;                 
+    justify-content: center;       
+    align-items: center;           /* vertically center buttons */
+    gap: 10px;     
+    overflow: hidden;              /* hide any extra white space / prevent scroll */
+    padding: 20px 0;               
+    width: 100%;                   
+    box-sizing: border-box;        
 }
 
-#Level_Select button{
-    width: 200px;
-    padding: 15px 40px;
-    font-size: 1.2rem;
-    background-color: blue;
-    color:beige;
+.Level_1 {
+    width:250px;
+    height: 100px;
     cursor: pointer;
+    display: flex;
+    background-image: url("Fruidle_Images/level1_button.png");
+    background-size: 100% 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: rgb(100, 253, 100,0.05);
     border:none;
-    border-radius: 10px;
-    font-family: 'VT323',monospace;
-    font-size: 1.6rem;
+    outline: none;
+    transition: transform 0.1s ease, filter 0.1s ease;
+}
+.Level_2 {
+    width:250px;
+    height: 100px;
+    cursor: pointer;
+    display: flex;
+    background-image: url("Fruidle_Images/level2_button.png");
+    background-size: 100% 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: rgba(235, 247, 72, 0.05);
+    border:none;
+    outline: none;
+    transition: transform 0.1s ease, filter 0.1s ease;
+}
+.Level_3 {
+    width:250px;
+    height: 100px;
+    cursor: pointer;
+    display: flex;
+    background-image: url("Fruidle_Images/level3_button.png");
+    background-size: 100% 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: rgba(253, 100, 100, 0.05);
+    border:none;
+    outline: none;
+    transition: transform 0.1s ease, filter 0.1s ease;
 }
 
-#Level_Select button:active {
-    background-color: rgb(102, 194, 194);
+#Level_Select h3 {
+    font-size: 2rem;     
 }
+
+
 
 h3 {
-    font-size: 1.8rem;
+    font-size: 2rem;
 }
 
 p#how {
@@ -157,33 +231,106 @@ h2#image img{
     display:block;
     margin: 0 auto;
 }
+.buttons {
+    display: flex;                 
+    justify-content: center;       
+    align-items: center;           /* vertically center buttons */
+    gap: 10px;                     
+    flex-wrap: nowrap;             /* keep all buttons in one row */
+    overflow: hidden;              /* hide any extra white space / prevent scroll */
+    padding: 20px 0;               
+    width: 100%;                   
+    box-sizing: border-box;        
+}
+
 
 .fruit {
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width:50px;
     height:50px;
-    padding:10px;
-    margin-top:20px;
     background-color: rgb(46, 44, 44);
     outline:2px white;
 }
 
+.del{
+    width:125px;
+    height:50px;
+    cursor: pointer;
+    display: flex;
+    background-image: url("Fruidle_Images/delete_button.png");
+    background-size: 100% 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: slategray;
+    border:none;
+    outline: none;
+    transition: transform 0.1s ease, filter 0.1s ease;
+}
+.go{
+    width:71px;
+    height:125px;
+    cursor: pointer;
+    display: flex;
+    background-image: url("Fruidle_Images/enter_button.png");
+    background-size: 100% 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: slategray;
+    border:none;
+    outline: none;
+    transition: transform 0.1s ease, filter 0.1s ease;
+}
+
+.Level_1:hover,.Level_2:hover,.Level_3:hover,.del:hover,.go:hover {
+    filter: brightness(1.1);   
+    transform: translateY(-2px); 
+}
+
+.Level_1:active,.Level_2:active,.Level_3:active,.del:active,.go:active {
+    transform: translateY(1px); 
+    filter: brightness(0.9);    
+}
+.fruit:hover{
+    transform:translateY(-2px);
+}
+.fruit:active {
+    transform:translateY(1px)
+}
+.fruit:hover img{
+    filter:brightness(1.1)
+}
+.fruit:active img{
+    filter:brightness(0.9)
+}
+   
 
 .Top_Bar {
-    display:flex;
+    display: flex;
     justify-content: flex-end;
-    gap:10px;
+    align-items: center;
+    gap: 10px;
 }
-.help {
+
+.Top_Bar img {
+    display: block;
+}
+
+img.help {
     width:75px;
-    height:100px;
+    height:75px;
+    cursor: pointer;
 }
 
 .home {
     width:100px;
     height:100px;
+    cursor: pointer;
 }
 
-.fruit_button, .del, .go, .help {
+.fruit_button, .help {
     width: 40px;
 }
 #Level_Select h3{
