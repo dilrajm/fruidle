@@ -47,6 +47,8 @@ function showPage(pageID){
     } );
     //Show page
     document.getElementById(pageID).classList.add("active");
+    // Makes sure new page scrolls to top.
+    window.scrollTo(0, 0);
 }
 
 

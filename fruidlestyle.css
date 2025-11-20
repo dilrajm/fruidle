@@ -333,7 +333,7 @@ img.help:active, .home:active {
 /* Level 2 needs an overide because the top bar is black. 
 Keep this CSS after the general top bar styling above. */
 #Level_2 img.help:hover, #Level_2 .home:hover {
-    filter: contrast(0.85);
+    filter: contrast(0.80);
 }
 #Level_2 img.help:active, #Level_2 .home:active {
     transform: scale(0.90);

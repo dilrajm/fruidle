@@ -1,0 +1,41 @@
+EECS 1012 Project
+
+Team Name: Fruidle
+
+Team Members:
+1. Vinuk Dahanak; ID #218114280
+2. 
+3.
+
+
+Team Problems & Changes from Wireframe / Pt.1
+
+* We made each level harder. 
+  - Before level 1, 2 and 3 had a sequence of 2, 3 and 5 fruits respectivly. 
+  - Now its 3, 5 and 7. Longer fruit sequences to guess.
+  - Found original to be too easy. 
+  - Had to switch level 1 and 2 fruit color theme as a result to keep it consistent with the "how to play" example as a result. 
+    Which showed green fruit with sequence of 3.
+
+* We made the rules box on each level into a pop-up that can be accessed via the (?) button in the top right.
+  - Less clutter one the game pages. 
+
+* We made the fruit emojis into transparent background pixel art PNGs. 
+  - More aesthetic.
+
+* We added an enter button to lock in guesses. 
+  - Had it in Function Requirements but forgot to add it in the Wireframe.
+
+
+Additional Notes
+
+* We have made a concerted effort to make this game 8 bit / 16 bit retro game pixel art themed. 
+  - Via icons, background images, titles and font choices.   
+  - Purely for aesthetics and user experience. 
+
+
+Individual Contributions: 
+
+Vinuk Dahanak:
+
+*
