@@ -38,4 +38,17 @@ Individual Contributions:
 
 Vinuk Dahanak:
 
-*
+* I entered promts to AI generate all background images, titles and icons on the website.
+  - Continiusly promted until I got images I was satisfied with. 
+  - Fed icons into a transparent background creator to make it look nicer. 
+  - Fed background images into AI resizer to get apprpriate ratios to fit page until I was satisfied. 
+  - Mostly used Google's Gemini for image generation with some Adobe Express for AI editing. 
+
+* I coded most of the HTML.
+  - Created the layout: Including putting the images and buttons in the HTML and typing up all the text. 
+  - Made sure HTML tags had ID or classes so they can be identified later in JavaScript or CSS.
+  - Decided that the page will be naviagate through Javascript, instead of multiple HTML documents. 
+  - Layed out the structure for pop-ups.
+  - Needed to put a little CSS to help with the early HTML. 
+  - HTML was later edited, cleaned up and revised by other teamates. 
+  - Styled the home and (?) button using CSS. 
