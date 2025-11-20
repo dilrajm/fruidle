@@ -247,10 +247,10 @@
       <div id="Too_close" class="temp-feedback">Too Close!</div>
 
     <!---WIN/LOSE POPUPS--->
-    
+
       <div id="Win_popup" class="pop_up">
         <button class="close_button">X</button>
-        <h2>You Win!</h2>
+        <h2><img id="won" src="Fruidle_Images/you_win.png"></h2>
         <p>Time: <span id="time" class="counter"></span></p>
         <p>Highscore: <span id="top_count"></span></p>
          <img class="home" onclick="startlevel(0)" src="Fruidle_Images/white_home_button.png">
@@ -258,11 +258,13 @@
 
       <div id="Lose_popup" class="pop_up">
         <button class="close_button">X</button>
-        <h2>You Lose...</h2>
-        <button id="Again">Try Again</button>
+        <h2><img id="lost" src="Fruidle_Images/you_lose.png"></h2>
+        <button id="Again"><img id="try" src="Fruidle_Images/try_again.png"></button>
         <p>Highscore: <span id="top_count"></span></p>
         <img class="home" onclick="startlevel(0)" src="Fruidle_Images/white_home_button.png">
       </div>
+
+     <!---RULES POPUPS---> 
 
       <div id="rules_popup" class="pop_up">
         <button class="close_button">X</button>
