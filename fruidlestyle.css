@@ -228,19 +228,22 @@ h2#image img{
     display:block;
     margin: 0 auto;
 }
-.buttons {
-    display: flex;                 
+#buttons{
+    display:grid;
+    grid-template-columns:repeat(2,auto);
     justify-content: center;       
-    align-items: center;           /* vertically center buttons */
-    gap: 10px;                     
-    flex-wrap: nowrap;             /* keep all buttons in one row */
-    overflow: hidden;              /* hide any extra white space / prevent scroll */
-    padding: 20px 0;               
-    width: 100%;                   
-    box-sizing: border-box;        
+    align-items: center;
+    gap:10px;
 }
 
 
+.buttons_2{
+    display:grid;
+    grid-template-columns:repeat(2,auto);
+    justify-content: center;       
+    align-items: center;
+    gap:10px;
+}
 .fruit {
     cursor: pointer;
     display: flex;
@@ -253,10 +256,10 @@ h2#image img{
 }
 
 .del{
-    width:125px;
-    height:50px;
+    grid-column: span 2;  
     cursor: pointer;
-    display: flex;
+    width: 125px;     /* ← bring this back */
+    height: 50px;
     background-image: url("Fruidle_Images/delete_button.png");
     background-size: 100% 100%;
     background-position: center;
@@ -267,10 +270,9 @@ h2#image img{
     transition: transform 0.1s ease, filter 0.1s ease;
 }
 .go{
-    width:71px;
-    height:125px;
+    width:91px;
+    height:160px;;
     cursor: pointer;
-    display: flex;
     background-image: url("Fruidle_Images/enter_button.png");
     background-size: 100% 100%;
     background-position: center;
