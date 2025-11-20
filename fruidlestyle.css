@@ -15,9 +15,6 @@ section.page {
     width: 100%;
     min-height: 100vh;  
 }
-#Level_2, #Level_3 {
-    padding-bottom: 400px; /* pushes content down */
-}
 
 #Homepage {
     background-image:url("Fruidle_Images/homepage_background2.png");
