@@ -8,7 +8,7 @@ html,body {
     padding:0;
 }
 body {
-    font-family: 'VT323',monospace;
+    font-family: 'VT323', 'Pixelify Sans', 'Tiny5', monospace;
     font-size:1.7rem;
 }
 section.page {
@@ -57,6 +57,14 @@ div#How_to_play {
     margin: 10px auto;           
     box-shadow: 0 4px 8px rgba(0,0,0,0.2); 
     color:white;
+}
+
+.ex:not(:last-child) {
+    margin-bottom: 35px;
+}
+
+.ex {
+    margin-top: 10px;
 }
 
 .modal-overlay{
