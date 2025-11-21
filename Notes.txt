@@ -50,5 +50,6 @@ Vinuk Dahanak:
   - Decided that the page will be naviagate through Javascript, instead of multiple HTML documents. 
   - Layed out the structure for pop-ups.
   - Needed to put a little CSS to help with the early HTML. 
-  - HTML was later edited, cleaned up and revised by other teamates. 
-  - Styled the home and (?) button using CSS. 
+  - HTML was later edited, cleaned up and revised by other teamates.
+
+* Styled the home and (?) button using CSS. 

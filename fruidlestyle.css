@@ -52,7 +52,7 @@ div#How_to_play {
     border: 2px solid #000;     
     border-radius: 10px;   
     padding: 40px;             
-    width: 65%;                
+    width: 60%;                
     height: auto;              
     margin: 10px auto;           
     box-shadow: 0 4px 8px rgba(0,0,0,0.2); 
@@ -122,7 +122,9 @@ div#How_to_play {
 }
 
 #title {
-    width: 350px;
+    width: 400px;
+    padding-top: 75px;
+    padding-bottom: 75px;
 }
 
 #slot1, #slot2, #slot3, #slot4, #slot5, #slot6, #slot7, #slot8, #slot9 {
@@ -344,8 +346,11 @@ Keep this CSS after the general top bar styling above. */
     width: 40px;
 }
 
-#Level_Select h3{
-    color:white;
+#Level_Select h1{
+    text-shadow: 0 0 14px black, 0 0 16px black, 0 0 18px black;
+    color: white;
+    font-size: 80px;
+    
 }
 
 img#kiwi,img#melon ,img#pear {
