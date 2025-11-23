@@ -84,6 +84,13 @@ div#How_to_play {
     max-width: 900px;
     font-size:1.4rem;
 }
+.modal-overlay .modal-content,
+.modal-overlay .modal-content p,
+.modal-overlay .modal-content h3,
+.modal-overlay .modal-content span { 
+    color: #dcdcdc; 
+    text-shadow: 0 0 4px rgba(0,0,0,0.8); 
+}
 
 .close-button{
     position: absolute;
