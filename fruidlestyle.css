@@ -64,7 +64,7 @@ div#How_to_play {
     height: auto;              
     margin: 10px auto;           
     box-shadow: 0 4px 8px rgba(0,0,0,0.2); 
-    color:white;
+    color:whitesmoke;
 }
 
 .ex:not(:last-child) {
@@ -99,7 +99,7 @@ div#How_to_play {
 .modal-overlay .modal-content p,
 .modal-overlay .modal-content h3,
 .modal-overlay .modal-content span { 
-    color: #8a8a8a; 
+    color: whitesmoke; 
     text-shadow: 0 0 4px rgba(0,0,0,0.8); 
 }
 
@@ -110,6 +110,7 @@ div#How_to_play {
     font-size: 2rem;
     cursor: pointer;
     color: white;
+    margin-top: -15px;
 }
  
 #pear, #kiwi, #melon {
@@ -245,8 +246,11 @@ h3 {
     font-size: 2rem;
 }
 
-p#how {
+p.how {
     margin-top:5px;
+}
+#how {
+    margin-top: -30px;
 }
 h2#image {
     margin:0;

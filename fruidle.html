@@ -19,7 +19,7 @@
 
         <div id="How_to_play">
             <h3>How to Play</h3>
-                <p id="how">
+                <p class="how">
                     Use the fruit keyboard to guess fruit sequence in 5 tries!
                     Guesses must be 3, 5 or 7 fruits long depending on the level.
                     The colour of the tiles will change to show how close your guess was to the fruit sequence.
@@ -266,26 +266,18 @@
         <p>Highscore: <span id="top_count"></span></p>
         <img class="home" onclick="startlevel(0)" src="Fruidle_Images/white_home_button.png">
       </div>
-
-     <!---RULES POPUPS---> 
-
-      <div id="rules_popup" class="pop_up">
-        <button class="close_button">X</button>
-        <div id="rules_content">
-            <!--Duplicate rules content here with javascript-->
-        </div>
-      </div>
       
 </div> <!--END CONTAINER-->
 
+                <!---RULES POPUPS---> 
 <!-----------------MODAL CONTAINER----------------------->
 <div id ="HowToPlayModal" class = "modal-overlay">
     <div class ="modal-content">
-        <span id ="closeHowToPlay" class="close-button">x</span>
+        <span id ="closeHowToPlay" class="close-button">✕</span>
 
-        <div class="How_to_play">
+        <div id="how" class="How_to_play">
             <h3>How to Play</h3>
-            <p id="how">
+            <p class="how">
                 Use the fruit keyboard to guess fruit sequence in 5 tries!
                 Guesses must be 3, 5 or 7 fruits long depending on the level.
                 The colour of the tiles will change to show how close your guess was to the fruit sequence.
