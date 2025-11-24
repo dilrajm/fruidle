@@ -1,3 +1,4 @@
+let intervalID = null;
 window.onload=function(){
     //load the homepage first
     innitGame();
@@ -29,11 +30,16 @@ function innitGame() {
 }
 
 function startlevel(level) {
+    if (intervalID) {
+        clearInterval(intervalID);
+        intervalID = null;
+    }
     if (level===0){
-        showPage("Homepage")
+        showPage("Homepage");
     }
     else{
         showPage("Level_"+level);
+        timer();
     }
 }
 
@@ -41,17 +47,35 @@ function startlevel(level) {
  * This function for swithcing between visible pages
  */
 function showPage(pageID){
-    //Hide pages
-    document.querySelectorAll(".page").forEach(page =>{
-        page.classList.remove("active");
-    } );
+    //hide all pages at the start
+    document.querySelectorAll(".page").forEach(page => {
+        page.classList.remove("active")     
+    });
     //Show page
     document.getElementById(pageID).classList.add("active");
     // Makes sure new page scrolls to top.
     window.scrollTo(0, 0);
 }
-
-
-
-   
-
+function timer(){
+ const output=document.querySelector(".page.active .timer");
+ let count=0;
+ let mcount=0;
+ if(intervalID){
+        clearInterval(intervalID);
+        intervalID=null;
+     }
+ const result=document.getElementById("result")
+ intervalID=setInterval(()=>{
+     count++;
+     if(count==60){
+        mcount++;
+        count=0;
+    }
+    output.innerText=`${mcount.toString().padStart(2,'0')}:${count.toString().padStart(2,'0')}`;
+    if(mcount==3){
+        result.innerText="Time:00:00";
+        clearInterval(intervalID);
+        output.innerText="Time's up";
+    }
+},1000);
+}

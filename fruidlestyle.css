@@ -43,6 +43,13 @@ section.page {
   text-align: center;
   box-sizing: border-box;
 }
+.timer {
+    font-size: 48px;
+    color:aliceblue;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
 
 div#How_to_play {
     background-color: rgba(17, 16, 16, 0.7); 
@@ -132,7 +139,12 @@ div#How_to_play {
     z-index: 99999;
     display: none;
 }
-
+#Win_popup {
+    width:100%;
+    height:100%;
+    background-color: #ffffff;
+    color:#000;
+}
 #title {
     width: 400px;
     padding-top: 75px;
@@ -256,7 +268,7 @@ h2#image img{
     grid-template-columns:repeat(2,auto);
     justify-content: center;       
     align-items: center;
-    gap:10px;
+    gap:5px;
 }
 .fruit {
     cursor: pointer;
@@ -272,7 +284,7 @@ h2#image img{
 .del{
     grid-column: span 2;  
     cursor: pointer;
-    width: 125px;     /* ← bring this back */
+    width: 110px;     
     height: 50px;
     background-image: url("Fruidle_Images/delete_button.png");
     background-size: 100% 100%;

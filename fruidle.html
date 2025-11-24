@@ -14,7 +14,7 @@
 <div id="container">
 
     <!-----------------------------------HOME PAGE --------------------------------->
-    <section id="Homepage" class="page active">
+    <section id="Homepage" class="page">
         <h2 id="image"><img id="title" src="Fruidle_Images/title.png"></h2>
 
         <div id="How_to_play">
@@ -63,10 +63,10 @@
         <div class="Top_Bar">
         <img class="help" title="How to Play" src="Fruidle_Images/white_question_mark_button.png"> <img class="home" title="Homepage" onclick="startlevel(0)" src="Fruidle_Images/white_home_button.png">
         </div>
-
+        <div class="timer"></div>
         <h2>Level 1</h2>
 
-        <div id="timer1" class="counter"></div>
+        
         <div class="grid">
             <div class="row">
                 <div class="cell"></div>
@@ -114,10 +114,10 @@
         <div class="Top_Bar">
             <img class="help" title="How to Play" src="Fruidle_Images/question_mark_button.png"> <img class="home" title="Homepage" onclick="startlevel(0)" src="Fruidle_Images/home_button.png">
         </div>
-
+        <div class="timer"></div>
         <h2>Level 2</h2>
 
-        <div id="timer2" class="counter"></div>
+        
         <div class="grid">
             <div class="row">
                 <div class="cell"></div>
@@ -177,10 +177,10 @@
         <div class="Top_Bar">
             <img class="help" title="How to Play" src="Fruidle_Images/white_question_mark_button.png"> <img class="home" title="Homepage" onclick="startlevel(0)" src="Fruidle_Images/white_home_button.png">
         </div>
-
+        <div class="timer"></div>
         <h2>Level 3</h2>
 
-        <div id="timer3" class="counter"></div>
+        
         <div class="grid">
             <div class="row">
                 <div class="cell"></div>
@@ -251,15 +251,15 @@
 
     <!---WIN/LOSE POPUPS--->
 
-      <div id="Win_popup" class="pop_up">
+    <div id="Win_popup" class="page">
         <button class="close_button">X</button>
         <h2><img id="won" src="Fruidle_Images/you_win.png"></h2>
-        <p>Time: <span id="time" class="counter"></span></p>
+        <div id="result"></div>
         <p>Highscore: <span id="top_count"></span></p>
-         <img class="home" onclick="startlevel(0)" src="Fruidle_Images/white_home_button.png">
-      </div>
+         <img class="home" onclick="startlevel(0)" src="Fruidle_Images/home_button.png">
+    </div>
 
-      <div id="Lose_popup" class="pop_up">
+      <div id="Lose_popup" class="page">
         <button class="close_button">X</button>
         <h2><img id="lost" src="Fruidle_Images/you_lose.png"></h2>
         <button id="Again"><img id="try" src="Fruidle_Images/try_again.png"></button>
