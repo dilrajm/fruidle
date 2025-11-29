@@ -51,5 +51,14 @@ Vinuk Dahanak:
   - Layed out the structure for pop-ups.
   - Needed to put a little CSS to help with the early HTML. 
   - HTML was later edited, cleaned up and revised by other teamates.
+  - Fixed up to 60 syntax issues in the HTML after checking with HTML validator.
 
-* Styled the home and (?) button using CSS. 
+* CSS
+  - Styled the home and (?) and pop-up close button using CSS. 
+  - Made minor adjustments to spacing and sizing throughout the page. 
+
+* Javascript
+  - Coded to ensure refresh stays on current page instead of going back to homepage. 
+  - Tweaked the timer function to ensure it stays on refresh, and loads a default of 0:00 before running.
+  - Coded so navigation resets to top of page.  
+  - Coded to prevent scrolling behind pop-up. 

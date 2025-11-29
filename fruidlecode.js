@@ -28,16 +28,22 @@ window.onload=function(){
     helpButtons.forEach(button=>{
         button.onclick=()=>{
              modal.style.display="flex";
+             // Prevent scrolling behind pop-up
+             this.document.body.style.overflow = "hidden";
         };
     });
 
     closeButton.onclick=()=>{
         modal.style.display="none";
+        // Scrolling returns once pop-up is closed.
+        document.body.style.overflow = "auto";
     };
 
     window.onclick = (e) =>{
         if(e.target===modal){
             modal.style.display = "none";
+            // Scrolling returns once pop-up is closed.
+            document.body.style.overflow = "auto";
         }
     };
 }
