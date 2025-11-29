@@ -1,13 +1,12 @@
 <!DOCTYPE html>
 <html lang="En">
 <head>
-    <meta charset="UTF-8" name="viewport" content="width=device-width , initial-scale=1">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="fruidlestyle.css">
     <link rel="icon" href="Fruidle_Images/Favicon.png">
     <title>Play Fruidle</title>
-    <link href="https://fonts.googleapis.com/css2?family=VT323&family=Pixelify+Sans&family=Tiny5&display=swap" rel="stylesheet">
-
-    
+    <link href="https://fonts.googleapis.com/css2?family=VT323&family=Pixelify+Sans&family=Tiny5&display=swap" rel="stylesheet">  
 </head>
 
 <body onload="innitGame()">
@@ -15,7 +14,7 @@
 
     <!-----------------------------------HOME PAGE --------------------------------->
     <section id="Homepage" class="page">
-        <h2 id="image"><img id="title" src="Fruidle_Images/title.png"></h2>
+        <h2 id="image"><img alt="Fruidle" id="title" src="Fruidle_Images/title.png"></h2>
 
         <div id="How_to_play">
             <h3>How to Play</h3>
@@ -26,25 +25,25 @@
                 </p>
                 <p>Examples</p> 
                 <div class="Example">
-                    <img id="slot1" src="Fruidle_Images/pear.png">
-                    <img id="slot2" src="Fruidle_Images/kiwi.png">
-                    <img id="slot3" src="Fruidle_Images/grn_apple.png">
+                    <img alt="Pear" class="slot1" src="Fruidle_Images/pear.png">
+                    <img alt="Kiwi" class="slot2" src="Fruidle_Images/kiwi.png">
+                    <img alt="Green Apple" class="slot3" src="Fruidle_Images/grn_apple.png">
                 </div>
-                <p class="ex">The pear <span><img id="pear" src="Fruidle_Images/pear.png"></span> is in the sequence and in the right spot.</p>
+                <p class="ex">The pear <span><img alt="Pear" class="pear" src="Fruidle_Images/pear.png"></span> is in the sequence and in the right spot.</p>
 
                 <div class="Example">
-                    <img id="slot4" src="Fruidle_Images/kiwi.png">
-                    <img id="slot5" src="Fruidle_Images/melon.png">
-                    <img id="slot6" src="Fruidle_Images/grn_apple.png">
+                    <img alt="Kiwi" class="slot4" src="Fruidle_Images/kiwi.png">
+                    <img alt="Melon" class="slot5" src="Fruidle_Images/melon.png">
+                    <img alt="Green Apple" class="slot6" src="Fruidle_Images/grn_apple.png">
                 </div>
-                <p class="ex">The melon <span><img id="melon" src="Fruidle_Images/melon.png"></span> is in the sequence but in the wrong spot.</p>
+                <p class="ex">The melon <span><img alt="Melon" class="melon" src="Fruidle_Images/melon.png"></span> is in the sequence but in the wrong spot.</p>
 
                 <div class="Example">
-                    <img id="slot7" src="Fruidle_Images/grn_apple.png">
-                    <img id="slot8" src="Fruidle_Images/grn_apple.png">
-                    <img id="slot9" src="Fruidle_Images/kiwi.png">
+                    <img alt="Green Apple" class="slot7" src="Fruidle_Images/grn_apple.png">
+                    <img alt="Green Apple" class="slot8" src="Fruidle_Images/grn_apple.png">
+                    <img alt="Kiwi" class="slot9" src="Fruidle_Images/kiwi.png">
                 </div>
-                <p class="ex">The kiwifruit <span><img id="kiwi" src="Fruidle_Images/kiwi.png"></span> is not in the sequence in any spot.</p> 
+                <p class="ex">The kiwifruit <span><img alt="Kiwi" class="kiwi" src="Fruidle_Images/kiwi.png"></span> is not in the sequence in any spot.</p> 
         </div>
 
         <div id="Level_Select">
@@ -61,7 +60,7 @@
     <section id="Level_1" class="page">
 
         <div class="Top_Bar">
-        <img class="help" title="How to Play" src="Fruidle_Images/white_question_mark_button.png"> <img class="home" title="Homepage" onclick="startlevel(0)" src="Fruidle_Images/white_home_button.png">
+            <img alt="Help" class="help" title="How to Play" src="Fruidle_Images/white_question_mark_button.png"> <img alt="Home" class="home" title="Homepage" onclick="startlevel(0)" src="Fruidle_Images/white_home_button.png">
         </div>
         <div class="timer"></div>
         <h2>Level 1</h2>
@@ -94,12 +93,12 @@
                 <div class="cell"></div>
             </div>
         </div>
-        <div id="buttons">
+        <div class="buttons_1">
             <div class="buttons_2">
-                   <button class="fruit" data-fruit="🍏"><img class="fruit_button" src="Fruidle_Images/grn_apple.png"></button>
-                    <button class="fruit" data-fruit="🍐"><img class="fruit_button" src="Fruidle_Images/pear.png"></button>
-                    <button class="fruit" data-fruit="🥝"><img class="fruit_button" src="Fruidle_Images/kiwi.png"></button>
-                    <button class="fruit" data-fruit="🍈"><img class="fruit_button" src="Fruidle_Images/melon.png"></button>
+                   <button class="fruit" data-fruit="🍏"><img alt="Green Apple" class="fruit_button" src="Fruidle_Images/grn_apple.png"></button>
+                    <button class="fruit" data-fruit="🍐"><img alt="Pear" class="fruit_button" src="Fruidle_Images/pear.png"></button>
+                    <button class="fruit" data-fruit="🥝"><img alt="Kiwi" class="fruit_button" src="Fruidle_Images/kiwi.png"></button>
+                    <button class="fruit" data-fruit="🍈"><img alt="Melon" class="fruit_button" src="Fruidle_Images/melon.png"></button>
                     <button class="del"></button>
             </div>
             <button class="go"></button>
@@ -112,7 +111,7 @@
     <section id="Level_2" class="page">
 
         <div class="Top_Bar">
-            <img class="help" title="How to Play" src="Fruidle_Images/question_mark_button.png"> <img class="home" title="Homepage" onclick="startlevel(0)" src="Fruidle_Images/home_button.png">
+            <img alt="Help" class="help" title="How to Play" src="Fruidle_Images/white_question_mark_button.png"> <img alt="Home" class="home" title="Homepage" onclick="startlevel(0)" src="Fruidle_Images/white_home_button.png">
         </div>
         <div class="timer"></div>
         <h2>Level 2</h2>
@@ -156,12 +155,12 @@
             </div>
         </div>
 
-        <div id="buttons">
+        <div class="buttons_1">
             <div class="buttons_2">
-             <button class="fruit" data-fruit="🍋"><img class="fruit_button" src="Fruidle_Images/lemon.png"></button>
-             <button class="fruit" data-fruit="🍌"><img class="fruit_button" src="Fruidle_Images/banana.png"></button>
-             <button class="fruit" data-fruit="🍊"><img class="fruit_button" src="Fruidle_Images/tangerine.png"></button>
-             <button class="fruit" data-fruit="🍍"><img class="fruit_button" src="Fruidle_Images/pineapple.png"></button>
+             <button class="fruit" data-fruit="🍋"><img alt="Lemon" class="fruit_button" src="Fruidle_Images/lemon.png"></button>
+             <button class="fruit" data-fruit="🍌"><img alt="Banana" class="fruit_button" src="Fruidle_Images/banana.png"></button>
+             <button class="fruit" data-fruit="🍊"><img alt="Tangerine" class="fruit_button" src="Fruidle_Images/tangerine.png"></button>
+             <button class="fruit" data-fruit="🍍"><img alt="Pineapple" class="fruit_button" src="Fruidle_Images/pineapple.png"></button>
              <button class="del"></button>
             </div>
             <button class="go"></button>
@@ -175,7 +174,7 @@
     <section id="Level_3" class="page">
 
         <div class="Top_Bar">
-            <img class="help" title="How to Play" src="Fruidle_Images/white_question_mark_button.png"> <img class="home" title="Homepage" onclick="startlevel(0)" src="Fruidle_Images/white_home_button.png">
+            <img alt="Help" class="help" title="How to Play" src="Fruidle_Images/white_question_mark_button.png"> <img alt="Home" class="home" title="Homepage" onclick="startlevel(0)" src="Fruidle_Images/white_home_button.png">
         </div>
         <div class="timer"></div>
         <h2>Level 3</h2>
@@ -229,12 +228,12 @@
             </div>
         </div>
 
-        <div id="buttons">
+        <div class="buttons_1">
             <div class="buttons_2">
-             <button class="fruit" data-fruit="🍎"><img class="fruit_button" src="Fruidle_Images/apple.png"></button>
-             <button class="fruit" data-fruit="🍓"><img class="fruit_button" src="Fruidle_Images/strawberry.png"></button>
-             <button class="fruit" data-fruit="🍒"><img class="fruit_button" src="Fruidle_Images/cherries.png"></button>
-             <button class="fruit" data-fruit="🍉"><img class="fruit_button" src="Fruidle_Images/watermelon.png"></button>
+             <button class="fruit" data-fruit="🍎"><img alt="Apple" class="fruit_button" src="Fruidle_Images/apple.png"></button>
+             <button class="fruit" data-fruit="🍓"><img alt="Strawberry" class="fruit_button" src="Fruidle_Images/strawberry.png"></button>
+             <button class="fruit" data-fruit="🍒"><img alt="Cherries" class="fruit_button" src="Fruidle_Images/cherries.png"></button>
+             <button class="fruit" data-fruit="🍉"><img alt="Watermelon" class="fruit_button" src="Fruidle_Images/watermelon.png"></button>
              <button class="del"></button>
             </div>   
             <button class="go"></button>
@@ -253,18 +252,18 @@
 
     <div id="Win_popup" class="page">
         <button class="close_button">X</button>
-        <h2><img id="won" src="Fruidle_Images/you_win.png"></h2>
+        <h2><img alt="You Win" id="won" src="Fruidle_Images/you_win.png"></h2>
         <div id="result"></div>
-        <p>Highscore: <span id="top_count"></span></p>
-         <img class="home" onclick="startlevel(0)" src="Fruidle_Images/home_button.png">
+        <p>Highscore: <span class="top_count"></span></p>
+         <img alt="Home" class="home" onclick="startlevel(0)" src="Fruidle_Images/home_button.png">
     </div>
 
       <div id="Lose_popup" class="page">
         <button class="close_button">X</button>
-        <h2><img id="lost" src="Fruidle_Images/you_lose.png"></h2>
-        <button id="Again"><img id="try" src="Fruidle_Images/try_again.png"></button>
-        <p>Highscore: <span id="top_count"></span></p>
-        <img class="home" onclick="startlevel(0)" src="Fruidle_Images/white_home_button.png">
+        <h2><img alt="You Lose" id="lost" src="Fruidle_Images/you_lose.png"></h2>
+        <button id="Again"><img alt="Try Again" id="try" src="Fruidle_Images/try_again.png"></button>
+        <p>Highscore: <span class="top_count"></span></p>
+        <img alt="Home" class="home" onclick="startlevel(0)" src="Fruidle_Images/white_home_button.png">
       </div>
       
 </div> <!--END CONTAINER-->
@@ -284,23 +283,23 @@
             </p>
             Examples 
             <div class="Example">
-                <img id="slot1" src="Fruidle_Images/pear.png">
-                <img id="slot2" src="Fruidle_Images/kiwi.png">
-                <img id="slot3" src="Fruidle_Images/grn_apple.png">
+                <img alt="Pear" class="slot1" src="Fruidle_Images/pear.png">
+                <img alt="Kiwi" class="slot2" src="Fruidle_Images/kiwi.png">
+                <img alt="Green Apple" class="slot3" src="Fruidle_Images/grn_apple.png">
             </div>
-            The pear <span><img id="pear" src="Fruidle_Images/pear.png"></span> is in the sequence and in the right spot.
+            The pear <span><img alt="Pear" class="pear" src="Fruidle_Images/pear.png"></span> is in the sequence and in the right spot.
             <div class="Example">
-                <img id="slot4" src="Fruidle_Images/kiwi.png">
-                <img id="slot5" src="Fruidle_Images/melon.png">
-                <img id="slot6" src="Fruidle_Images/grn_apple.png">
+                <img alt="Kiwi" class="slot4" src="Fruidle_Images/kiwi.png">
+                <img alt="Melon" class="slot5" src="Fruidle_Images/melon.png">
+                <img alt="Green Apple" class="slot6" src="Fruidle_Images/grn_apple.png">
             </div>
-            The melon <span><img id="melon" src="Fruidle_Images/melon.png"></span> is in the sequence but in the wrong spot.
+            The melon <span><img alt="Melon" class="melon" src="Fruidle_Images/melon.png"></span> is in the sequence but in the wrong spot.
             <div class="Example">
-                <img id="slot7" src="Fruidle_Images/grn_apple.png">
-                <img id="slot8" src="Fruidle_Images/grn_apple.png">
-                <img id="slot9" src="Fruidle_Images/kiwi.png">
+                <img alt="Green Apple" class="slot7" src="Fruidle_Images/grn_apple.png">
+                <img alt="Green Apple" class="slot8" src="Fruidle_Images/grn_apple.png">
+                <img alt="Kiwi" class="slot9" src="Fruidle_Images/kiwi.png">
             </div>
-            The kiwifruit <span><img id="kiwi" src="Fruidle_Images/kiwi.png"></span> is not in the sequence in any spot.
+            The kiwifruit <span><img alt="Kiwi" class="kiwi" src="Fruidle_Images/kiwi.png"></span> is not in the sequence in any spot.
         </div>
     </div>
 </div>

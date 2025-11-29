@@ -1,7 +1,24 @@
 let intervalID = null;
 window.onload=function(){
     //load the homepage first
-    innitGame();
+
+    // Check if there is a saved page in URL first
+    const hash = window.location.hash.substring(1);
+    if (hash) {
+        showPage(hash);
+
+        // Wait for DOM to load, then start timer
+        setTimeout(() => {
+            if(hash.startsWith('Level_')) {
+                timer();
+            }
+        }, 100);
+
+    } else {
+        // If no saved page load homepage
+        innitGame();
+    }
+    
 
     //get all help buttons
     const helpButtons=document.querySelectorAll(".help");
@@ -39,7 +56,8 @@ function startlevel(level) {
     }
     else{
         showPage("Level_"+level);
-        timer();
+        // Start timer immediately for navigation purposes.
+        setTimeout(() =>timer(), 50);
     }
 }
 
@@ -53,29 +71,53 @@ function showPage(pageID){
     });
     //Show page
     document.getElementById(pageID).classList.add("active");
+    
+    // Makes sure refresh stays on current page.
+    window.location.hash = pageID;
+
     // Makes sure new page scrolls to top.
     window.scrollTo(0, 0);
 }
-function timer(){
- const output=document.querySelector(".page.active .timer");
- let count=0;
- let mcount=0;
- if(intervalID){
-        clearInterval(intervalID);
-        intervalID=null;
-     }
- const result=document.getElementById("result")
- intervalID=setInterval(()=>{
-     count++;
-     if(count==60){
-        mcount++;
-        count=0;
+
+function timer() {
+    const activePage = document.querySelector('.page.active');
+    if (!activePage) {
+        console.log("No active page found");
+        return;
     }
-    output.innerText=`${mcount.toString().padStart(2,'0')}:${count.toString().padStart(2,'0')}`;
-    if(mcount==3){
-        result.innerText="Time:00:00";
-        clearInterval(intervalID);
-        output.innerText="Time's up";
+    
+    const output = activePage.querySelector('.timer');
+    if (!output) {
+        console.log("No timer element found on active page");
+        return;
     }
-},1000);
+    
+    console.log("Starting timer on:", activePage.id); // Debug log
+    
+    let count = 0;
+    let mcount = 0;
+    
+    if (intervalID) {
+        clearInterval(intervalID);
+        intervalID = null;
+    }
+    
+    const result = document.getElementById("result");
+    
+    // Reset timer display first
+    output.innerText = "00:00";
+    
+    intervalID = setInterval(() => {
+        count++;
+        if (count == 60) {
+            mcount++;
+            count = 0;
+        }
+        output.innerText = `${mcount.toString().padStart(2, '0')}:${count.toString().padStart(2, '0')}`;
+        if (mcount == 3) {
+            if (result) result.innerText = "Time:00:00";
+            clearInterval(intervalID);
+            output.innerText = "Time's up";
+        }
+    }, 1000);
 }

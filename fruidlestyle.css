@@ -93,7 +93,8 @@ div#How_to_play {
     position: relative;
     width: 85%;
     max-width: 900px;
-    font-size:1.4rem;
+    font-size:1.3rem;
+    padding-top: 30px;
 }
 .modal-overlay .modal-content,
 .modal-overlay .modal-content p,
@@ -102,18 +103,8 @@ div#How_to_play {
     color: whitesmoke; 
     text-shadow: 0 0 4px rgba(0,0,0,0.8); 
 }
-
-.close-button{
-    position: absolute;
-    top: 5px;
-    right: 15px;
-    font-size: 2rem;
-    cursor: pointer;
-    color: white;
-    margin-top: -15px;
-}
  
-#pear, #kiwi, #melon {
+.pear, .kiwi, .melon {
     width: 30px;
 }
 
@@ -156,22 +147,22 @@ div#How_to_play {
     padding-bottom: 75px;
 }
 
-#slot1, #slot2, #slot3, #slot4, #slot5, #slot6, #slot7, #slot8, #slot9 {
+.slot1, .slot2, .slot3, .slot4, .slot5, .slot6, .slot7, .slot8, .slot9 {
     border: 2px solid black;
     display: inline-block;
     padding: 5px;
     width: 80px;
 }
 
-#slot1 {
+.slot1 {
     background-color: rgb(25, 129, 25,0.5);
 }
 
-#slot5 {
+.slot5 {
     background-color: rgb(255, 255, 0,0.5); 
 }
 
-#slot9 {
+.slot9 {
     background-color: rgb(111, 128, 144,0.5);
 }
 
@@ -262,14 +253,13 @@ h2#image img{
     display:block;
     margin: 0 auto;
 }
-#buttons{
+.buttons_1{
     display:grid;
     grid-template-columns:repeat(2,auto);
     justify-content: center;       
     align-items: center;
     gap:10px;
 }
-
 
 .buttons_2{
     display:grid;
@@ -385,6 +375,42 @@ Keep this CSS after the general top bar styling above. */
     
 }
 
-img#kiwi,img#melon ,img#pear {
+img.kiwi,img.melon ,img.pear {
     vertical-align:-4px;
 }
+
+.close-button {
+  position: absolute;
+  top: -10px;
+  right: 0px;
+  width: 32px;
+  height: 32px;
+  background: #f0f0f0;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  font-weight: bold;
+  color: #000000 !important; 
+}
+
+.close-button:hover {
+  background: #ff4444;
+  color: white !important; 
+  transform: scale(1.1);
+  transition: all 0.3s ease;
+}
+
+.close-button:active {
+  transform: scale(0.9);
+}
+
+#how .Example img {
+    width: 75px;
+}
+
