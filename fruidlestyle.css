@@ -19,7 +19,7 @@ section.page {
 
 #Homepage {
     background-image:url("Fruidle_Images/homepage_background2.png");
-    background-size: 100% 100%;      
+    background-size: 100% 100%;     
     background-repeat: no-repeat;
     background-position: center;
     min-height: 100vh;  
@@ -39,7 +39,8 @@ section.page {
     background-size: 100% 100%;       /* scales nicely without stretching */
     background-repeat: no-repeat;
     background-position: center;
-    min-height: 100vh;            /* ensures level fills viewport */
+    min-height: 100vh; 
+    padding-bottom: 10vw;           /* ensures level fills viewport */
 }
 #container {
   max-width: 100%;
@@ -47,12 +48,21 @@ section.page {
   text-align: center;
   box-sizing: border-box;
 }
+.wrapper{
+    display:grid;
+    margin-left:200px;
+    grid-template-columns:repeat(2,auto);
+    justify-content: center;       
+    align-items: center;
+}
+
 .timer {
+    margin-left: 100px;
     font-size: 48px;
     color:aliceblue;
-    display:flex;
-    justify-content: center;
-    align-items: center;
+}
+.grid{
+    position: relative;
 }
 
 div#How_to_play {
@@ -166,6 +176,7 @@ div#How_to_play {
     background-color: rgb(111, 128, 144,0.5);
 }
 
+
 .cell {
     border: 2px solid black;
     display: inline-block;
@@ -259,6 +270,7 @@ h2#image img{
     justify-content: center;       
     align-items: center;
     gap:10px;
+    margin-top:30px;
 }
 
 .buttons_2{

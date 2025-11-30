@@ -120,10 +120,5 @@ function timer() {
             count = 0;
         }
         output.innerText = `${mcount.toString().padStart(2, '0')}:${count.toString().padStart(2, '0')}`;
-        if (mcount == 3) {
-            if (result) result.innerText = "Time:00:00";
-            clearInterval(intervalID);
-            output.innerText = "Time's up";
-        }
     }, 1000);
 }
