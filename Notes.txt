@@ -4,7 +4,7 @@ Team Name: Fruidle
 
 Team Members:
 1. Vinuk Dahanak; ID #218114280
-2. 
+2. Dilraj Mukkar; ID #216787129
 3.
 
 
@@ -62,3 +62,27 @@ Vinuk Dahanak:
   - Tweaked the timer function to ensure it stays on refresh, and loads a default of 0:00 before running.
   - Coded so navigation resets to top of page.  
   - Coded to prevent scrolling behind pop-up. 
+
+
+Dilraj Mukkar:
+
+*Coded the homepage, and levels button functionality to swtich between pages  
+	- made it so that we dont have individual html files for each page but rather only 
+	  one page, made it so that each page thats active is shown, rest are hidden. 
+
+*? help button popup coded, along with css elements, blurred background.
+
+*Restructured all of the HTML so that its divided into each section such as homepage, and levels, and modal controls with proper indentation and comments.
+
+*Coded all of the games functionality except timer, winlose popup, and scroll lock.
+	-responsible for core game engine, created a levels object that maps number of fruits, avalaible fruit images to each level
+	-coded the delete button, which updates current game state, also prevented deleting when cells are empty
+	-coded the enter button to check each row after color coded.
+	-made a randomized secret key generator, this selects fruit images from level specific pools, alloing duplicated,
+		with corrected length matching each array size
+	-input system: implemented click based input for fruit buttons inside the next available grid, prevented out of bounds exceptions, tracking based on 2D array setup
+	-Row validation: only allows enter when rows are full, compares guess vs secret key, painted rows with wordle logic
+	-Two pass evaluation: first pass marks green and removes from pool, second pass marks yellow while preventing double counting duplicates
+	-Grid rendering and tile painting; implemented paintRow() to update the grids dynamically, also ensured CSS visuals apply consistently and correctly. 
+	-Button lock freezing: implemeneted lock buttons to disable all buttons when the win or loss condition is met
+	-Button Enabling: coded to reset the grid availability after loading a new level. 
