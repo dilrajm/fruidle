@@ -120,11 +120,6 @@ function timer() {
             count = 0;
         }
         output.innerText = `${mcount.toString().padStart(2, '0')}:${count.toString().padStart(2, '0')}`;
-        if (mcount == 3) {
-            if (result) result.innerText = "Time:00:00";
-            clearInterval(intervalID);
-            output.innerText = "Time's up";
-        }
     }, 1000);
 }
 
@@ -345,7 +340,7 @@ function submitRow() {
     paintRow(game.row, res); //color row tiles 
 
     
-    /**WIN LOSE CONDITION, need to play around with this, just add a function ********************************************@NEON*************************************
+    /**WIN LOSE CONDITION, need to play around with this, just add a function ********************************************@Northside*************************************
      * that shows the win/lose popop that we coded in the html
      * 
     */
@@ -353,7 +348,7 @@ function submitRow() {
     //Check if all are green, then you win
     let win = res.every(v => v === "correct");
 
-    if (win) {                               //HERE @NEON
+    if (win) {                               //HERE @Northside
         console.log("WIN!");
         lockButtons(); //freeze gameplay
         return;
@@ -363,7 +358,7 @@ function submitRow() {
     game.row++;
     game.col = 0;
 
-    //if out of rows, then you lose           //AND HERE @NEON
+    //if out of rows, then you lose           //AND HERE @Northside
     if (game.row >= game.maxTries) {
         console.log("LOSE");
         lockButtons(); //freeze gameplay
