@@ -165,11 +165,35 @@ div#How_to_play {
 .slot9 {
     background-color: rgb(111, 128, 144,0.5);
 }
-
+.row{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px; /*space between the tiles*/
+}
 .cell {
     border: 2px solid black;
-    display: inline-block;
-    padding: 30px;
+    display: flex;
+    width: 60px;
+    height: 60px;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+/*have to make fruit images smaller so that they fit inside the grid cells when clicked*/
+.cell img.tile-fruit{
+    width: 40px;
+    height: 40px;
+    object-fit: block;
+    display: block;
+    margin: 0 auto;
+}
+/* to add a gap between the columns */
+.grid{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
 }
 
 #Level_Select {
@@ -259,6 +283,7 @@ h2#image img{
     justify-content: center;       
     align-items: center;
     gap:10px;
+    margin-top: 25px;
 }
 
 .buttons_2{
@@ -414,3 +439,26 @@ img.kiwi,img.melon ,img.pear {
     width: 75px;
 }
 
+
+/* ======= TILE COLOURS FOR GAME FEEDBACK ======= */
+
+/* image inside a grid cell */
+.cell img.tile-fruit {
+    width: 40px;
+    height: 40px;
+}
+
+/* green – correct fruit, correct spot */
+.cell.tile-correct {
+    background-color: rgba(25, 129, 25, 0.7);
+}
+
+/* yellow – correct fruit, wrong spot */
+.cell.tile-present {
+    background-color: rgba(255, 255, 0, 0.7);
+}
+
+/* grey – fruit not in the secret at all */
+.cell.tile-absent {
+    background-color: rgba(111, 128, 144, 0.7);
+}
