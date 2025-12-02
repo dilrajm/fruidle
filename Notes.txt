@@ -101,17 +101,27 @@ CSS (Added ~350 lines)
 
 Styled main pages, including colors, layouts, grids, and structures.
 
-Adjusted grid dimensions, aligned the timer with the grid, and styled the homepage “How to Play” section.
+adding box-sizing:border-box for proper spacing
 
-Designed and sized buttons (6 fruit buttons + enter button), ensuring proper layout and user interaction effects.
+using vh instead of px in all backgrounds for flexibility on bigger/smaller screens.
 
-Ensured home and help buttons had appropriate size and positioning.
+Adjusted grid dimensions adding cells to the html and adjusting sizes. 
+
+aligned the timer with the grid using "display:grid: options and margins.
+
+styled the homepage “How to Play” section making transparent backgrounds for icons and box.
+
+Designed and sized buttons using "display:grid" twice(6 fruit buttons + enter button) using background image centering plus photoshop and proper rations for a nice polish, ensuring proper layout and user interaction effects using translateY and brightness.
+
+Ensured home and help buttons had appropriate size and positioning using display:flex and flex-start.
+
+adding containers to center texts and all items commands like justify content text align and align items.
 
 Applied tile coloring for Wordle-style feedback (tile-correct, tile-present, tile-absent).
 
 Added hover and click effects for level select and game buttons to improve user feedback.
 
-Adjusted spacing, sizing, and layout across pages for a cohesive design.
+Adjusted spacing, sizing, and layout across pages for a cohesive design using padding margins and grids.
 
 JavaScript
 
