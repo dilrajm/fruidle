@@ -9,6 +9,49 @@ const losePopup = document.getElementById("Lose_popup");
 const closeLosePopup = losePopup.querySelector(".close-button");
 const tryAgainButton = document.getElementById("Again");
 
+// High score manager
+const HighScoreManager = {
+    STORAGE_KEY: 'fruidle_high_score',
+    
+    // Get current high score from sessionStorage
+    getHighScore: function() {
+        const saved = sessionStorage.getItem(this.STORAGE_KEY);
+        if (saved) {
+            return parseInt(saved, 10);
+        }
+        return 0; // Default to 0 if no high score yet
+    },
+    
+    // Update high score if new level is higher
+    updateHighScore: function(level) {
+        const currentHigh = this.getHighScore();
+        if (level > currentHigh) {
+            sessionStorage.setItem(this.STORAGE_KEY, level.toString());
+            return true; // New high score
+        }
+        return false; // No new high score
+    },
+    
+    // Format high score for display (e.g., "Level 3")
+    formatHighScore: function() {
+        const level = this.getHighScore();
+        if (level === 0) {
+            return "None"; // No high score yet
+        }
+        return `Level ${level}`;
+    },
+};
+
+// Update high score displays
+function updateHighScoreDisplays() {
+    const highScoreText = HighScoreManager.formatHighScore();
+    const highScoreElements = document.querySelectorAll('.top_count');
+    
+    highScoreElements.forEach(element => {
+        element.textContent = highScoreText;
+    });
+}
+
 window.onload=function(){
     // Load the correct page based on URL hash (supports refresh)
 
@@ -26,6 +69,9 @@ window.onload=function(){
         // No hash or "Homepage" → show home
         innitGame();
     }
+
+    // Initialize high score display
+    updateHighScoreDisplays();
     
 
     //get all help buttons
@@ -96,8 +142,9 @@ function innitGame() {
 }
 
 function startlevel(level) {
-    // Make sure lose popup is hidden when starting a level
+    // Make sure both popups are hidden when starting a level
     losePopup.classList.remove("active");
+    winPopup.classList.remove("active");
     document.body.style.overflow = "auto";
     
     if (intervalID) {
@@ -123,8 +170,9 @@ function showPage(pageID){
     //Show page
     document.getElementById(pageID).classList.add("active");
 
-    // Makes sure lose popup disapears after clicking home
+    // Makes sure both popups disapears after clicking home
     losePopup.classList.remove("active");
+    winPopup.classList.remove("active");
     document.body.style.overflow = "auto";
     
     // Makes sure refresh stays on current page.
@@ -132,6 +180,10 @@ function showPage(pageID){
 
     // Makes sure new page scrolls to top.
     window.scrollTo(0, 0);
+
+    // Update high score display when changing pages
+    updateHighScoreDisplays();
+
     const timerEl = document.getElementById(pageID).querySelector(".timer");
 
     if (timerEl) timerEl.innerText = "00:00";
@@ -482,6 +534,14 @@ function paintRow(r, res) {
 }
 //Function to show win popup
 function showWinPopup() {
+
+     // Update high score before showing popup
+    const newHighScore = HighScoreManager.updateHighScore(game.level);
+    
+    // Update the display
+    updateHighScoreDisplays();
+
+    // Show win pop-up
     winPopup.classList.add("active");
     // Prevent scrolling behind popup
     document.body.style.overflow = "hidden";
@@ -489,6 +549,10 @@ function showWinPopup() {
 
 //Function to show lose popup
 function showLosePopup() {
+
+    // Update the display
+    updateHighScoreDisplays();
+
     losePopup.classList.add("active");
     // Prevent scrolling behind popup
     document.body.style.overflow = "hidden";

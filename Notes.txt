@@ -63,7 +63,9 @@ Vinuk Dahanak:
   - Coded so navigation resets to top of page.  
   - Coded to prevent scrolling behind pop-up. 
   - Coded to ensure buttons work on refresh. 
-  - Coded the win pop up and lose pop up on win and lose condition. 
+  - Coded the win pop up and lose pop up on win and lose condition.
+  - Coded the try again button. 
+  - Coded the high score tracking functionality by session.  
 
 
 Dilraj Mukkar:
