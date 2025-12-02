@@ -122,6 +122,7 @@ Mohammadparsa Hajihosseini
 - Developed a timer that persists across refresh, starting at 0:00.
 - Ensured page navigation resets scroll to the top.
 - Prevented scrolling behind pop-ups for better UX.
+- Created 3 Vitests for the game logic along with a js file rewriting each function to get rid of DOM content and create a purely logical js file
 
 * Collaboration / Support
 - Integrated layout, CSS, and timer functionality with the core game engine.
