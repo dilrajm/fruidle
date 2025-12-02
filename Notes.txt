@@ -55,12 +55,15 @@ Vinuk Dahanak:
 
 * CSS
   - Styled the home and (?) and pop-up close button using CSS. 
-  - Made minor adjustments to spacing and sizing throughout the page. 
+  - Made minor adjustments to spacing and sizing throughout the page.
+  - Styled both the win and lose pop ups. 
 
 * Javascript
   - Coded to ensure refresh stays on current page instead of going back to homepage. 
   - Coded so navigation resets to top of page.  
   - Coded to prevent scrolling behind pop-up. 
+  - Coded to ensure buttons work on refresh. 
+  - Coded the win pop up and lose pop up on win and lose condition. 
 
 
 Dilraj Mukkar:
