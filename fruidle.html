@@ -259,13 +259,17 @@
 
     <!---WIN/LOSE POPUPS--->
 
-    <div id="Win_popup" class="page">
-        <button class="close-button">✕</button>
-        <h2><img alt="You Win" id="won" src="Fruidle_Images/you_win.png"></h2>
-        <div id="result"></div>
+    <div id="Win_popup">
+    <button class="close-button">✕</button>
+    
+    <!-- Main content container for vertical stacking -->
+    <div class="popup-content">
+        <img alt="You Win" id="won" src="Fruidle_Images/you_win.png">
         <p>Highscore: <span class="top_count"></span></p>
-         <img alt="Home" title="Homepage" class="home" onclick="startlevel(0)" src="Fruidle_Images/home_button.png">
+        <div id="result">Time: </div>
+        <img alt="Home" title="Homepage" class="home" onclick="startlevel(0)" src="Fruidle_Images/white_home_button.png">
     </div>
+</div>
 
     <div id="Lose_popup">
         <button class="close-button">✕</button>

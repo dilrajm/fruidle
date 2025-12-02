@@ -584,3 +584,26 @@ img.kiwi,img.melon ,img.pear {
     background: #ff4444;
     transform: scale(1.15);
 }
+
+/* Win popup specific styles */
+#Win_popup .popup-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 24px; /* Adjust spacing between items */
+    max-width: 90%;
+}
+
+/* Make sure images scale properly */
+#Win_popup #won {
+    max-width: 80%;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+/* Style for highscore text in win popup */
+#Win_popup p {
+    font-size: 1.5rem;
+    margin: 0;
+}

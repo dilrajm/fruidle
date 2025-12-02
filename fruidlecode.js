@@ -1,4 +1,9 @@
 let intervalID = null;
+
+// Reference to win popup
+const winPopup = document.getElementById("Win_popup");
+const closeWinPopup = winPopup.querySelector(".close-button");
+
 // Reference to lose popup
 const losePopup = document.getElementById("Lose_popup");
 const closeLosePopup = losePopup.querySelector(".close-button");
@@ -33,6 +38,12 @@ window.onload=function(){
     if (e.target === modal) {
         modal.style.display = "none";
         document.body.style.overflow = "auto";
+    }   
+
+    // Close Win popup if clicking backdrop
+    if (e.target === winPopup) {
+        winPopup.classList.remove("active");
+        document.body.style.overflow = "auto";
     }
     
     // Close Lose popup if clicking backdrop
@@ -58,6 +69,12 @@ window.onload=function(){
         document.body.style.overflow = "auto";
     };
 
+     // Close win popup when X is clicked
+    closeWinPopup.onclick = () => {
+        winPopup.classList.remove("active");
+        document.body.style.overflow = "auto";
+    };
+    
     
     // Close lose popup when X is clicked
     closeLosePopup.onclick = () => {
@@ -389,7 +406,8 @@ function submitRow() {
     if (win) {
         console.log("WIN!");
         lockButtons(); //freeze gameplay
-        
+        // Show win popup
+        showWinPopup();
         return;
     }
 
@@ -457,8 +475,14 @@ function paintRow(r, res) {
         }
     }
 }
+//Function to show win popup
+function showWinPopup() {
+    winPopup.classList.add("active");
+    // Prevent scrolling behind popup
+    document.body.style.overflow = "hidden";
+}
 
-//Simple function to show lose popup
+//Function to show lose popup
 function showLosePopup() {
     losePopup.classList.add("active");
     // Prevent scrolling behind popup
