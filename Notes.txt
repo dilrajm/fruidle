@@ -36,111 +36,93 @@ Additional Notes
 
 Individual Contributions: 
 
-Vinuk Dahanak:
+Vinuk Dahanak
 
-* I entered promts to AI generate all background images, titles and icons on the website.
-  - Continiusly promted until I got images I was satisfied with. 
-  - Fed icons into a transparent background creator to make it look nicer. 
-  - Fed background images into AI resizer to get apprpriate ratios to fit page until I was satisfied. 
-  - Mostly used Google's Gemini for image generation with some Adobe Express for AI editing. 
+* Image Assets
+- Generated all background images, titles, and icons using AI.
+- Continuously prompted until satisfied with results.
+- Converted icons to transparent backgrounds for a cleaner look.
+- Resized background images using AI tools to fit page layout.
+- Primarily used Google’s Gemini for generation and Adobe Express for editing.
 
-* I coded most of the HTML.
-  - Created the layout: Including putting the images and buttons in the HTML and typing up all the text. 
-  - Made sure HTML tags had ID or classes so they can be identified later in JavaScript or CSS.
-  - Decided that the page will be naviagate through Javascript, instead of multiple HTML documents. 
-  - Layed out the structure for pop-ups.
-  - Needed to put a little CSS to help with the early HTML. 
-  - HTML was later edited, cleaned up and revised by other teamates.
-  - Fixed up to 60 syntax issues in the HTML after checking with HTML validator.
+* HTML
+- Coded most of the HTML structure.
+- Created the layout, placing images, buttons, and text.
+- Assigned IDs and classes for later targeting in JavaScript and CSS.
+- Decided navigation would be handled with JavaScript instead of multiple HTML files.
+- Laid out structure for pop-ups.
+- Added minimal CSS to support early HTML structure.
+- HTML was later revised and cleaned up by teammates.
+- Fixed approximately 60 syntax issues after validating with an HTML validator.
 
 * CSS
-  - Styled the home and (?) and pop-up close button using CSS. 
-  - Made minor adjustments to spacing and sizing throughout the page.
-  - Styled both the win and lose pop ups. 
+- Styled homepage elements, help button and pop-up close buttons.
+- Made minor adjustments to spacing and sizing throughout the page.
+- Styled win, lose and temporary verbal feedback pop-ups.
 
-* Javascript
-  - Coded to ensure refresh stays on current page instead of going back to homepage. 
-  - Coded so navigation resets to top of page.  
-  - Coded to prevent scrolling behind pop-up. 
-  - Coded to ensure buttons work on refresh. 
-  - Coded the win pop up and lose pop up on win and lose condition. 
+* JavaScript
+- Ensured page refresh retains the current view instead of returning to homepage.
+- Implemented scroll reset to top on navigation.
+- Prevented scrolling behind pop-ups.
+- Ensured buttons remain functional after refresh.
+- Coded win and lose pop-ups for game outcomes.
+- Implemented the “Try Again” button functionality.
+- Tracked high scores in session storage.
+- Added temporary verbal feedback with animation based on user performance.
+- Made minor syntax improvements and optimizations.
 
+---
 
-Dilraj Mukkar:
+Dilraj Mukkar
 
-*Coded the homepage, and levels button functionality to swtich between pages  
-	- made it so that we dont have individual html files for each page but rather only 
-	  one page, made it so that each page thats active is shown, rest are hidden. 
+* Navigation & HTML Structure
+- Coded homepage and level buttons to switch between sections.
+- Ensured a single HTML file is used, showing only the active page and hiding others.
+- Implemented help button pop-up with blurred background styling.
+- Restructured HTML into sections (homepage, levels, modal controls) with proper indentation and comments.
 
-*? help button popup coded, along with css elements, blurred background.
+* Core Game Functionality
+- Coded all game functionality except timer, win/lose pop-ups, and scroll lock.
+- Created a `levels` object mapping number of fruits and available images to each level.
+- Implemented delete button functionality, updating game state and preventing deletion on empty cells.
+- Implemented enter button to check row completion.
+- Developed randomized secret key generator selecting fruits from level-specific pools with duplicates, ensuring correct array lengths.
+- Input system: click-based fruit selection for next available grid cell, with out-of-bounds prevention.
+- Row validation: enter allowed only when rows are full; compares guess vs secret key with Wordle-style logic.
+- Two-pass evaluation: first pass marks correct placement (green), second pass marks present but misplaced (yellow), avoiding duplicate counting.
+- Grid rendering: dynamically updates grid tiles and applies CSS visuals consistently.
+- Button lock: disables buttons when game is won or lost.
+- Button enabling: resets grid availability when loading a new level.
 
-*Restructured all of the HTML so that its divided into each section such as homepage, and levels, and modal controls with proper indentation and comments.
+---
 
-*Coded all of the games functionality except timer, winlose popup, and scroll lock.
-	-responsible for core game engine, created a levels object that maps number of fruits, avalaible fruit images to each level
-	-coded the delete button, which updates current game state, also prevented deleting when cells are empty
-	-coded the enter button to check each row after color coded.
-	-made a randomized secret key generator, this selects fruit images from level specific pools, alloing duplicated,
-		with corrected length matching each array size
-	-input system: implemented click based input for fruit buttons inside the next available grid, prevented out of bounds exceptions, tracking based on 2D array setup
-	-Row validation: only allows enter when rows are full, compares guess vs secret key, painted rows with wordle logic
-	-Two pass evaluation: first pass marks green and removes from pool, second pass marks yellow while preventing double counting duplicates
-	-Grid rendering and tile painting; implemented paintRow() to update the grids dynamically, also ensured CSS visuals apply consistently and correctly. 
-	-Button lock freezing: implemeneted lock buttons to disable all buttons when the win or loss condition is met
-	-Button Enabling: coded to reset the grid availability after loading a new level. 
+Mohammadparsa Hajihosseini
 
-Mohammadparsa Hajihosseini:
-HTML
+* HTML
+- Structured page layout based on Vinuk’s foundation.
+- Edited AI-generated images using Photoshop.
+- Created buttons, text, and pop-up/modal structures for rules.
+- Assigned IDs and classes for easy targeting with CSS and JavaScript.
+- Cleaned up HTML for consistency and fixed syntax issues.
 
-structured the page layout after base foundation by Vinuk, using photoshop to change photos generated by Vinuk, created buttons and text.
+* CSS (~350 lines)
+- Styled main pages, including colors, layouts, and grids.
+- Applied `box-sizing: border-box` for proper spacing.
+- Used `vh` instead of `px` for flexible backgrounds across screen sizes.
+- Adjusted grid dimensions, added cells, and aligned the timer using `display: grid`.
+- Styled homepage “How to Play” section with transparent backgrounds for icons and boxes.
+- Designed buttons using `display: grid` with background image centering, Photoshop adjustments, and animations for hover/click feedback.
+- Ensured home and help buttons had proper size and positioning using `display: flex`.
+- Aligned text and elements using flex and grid containers (`justify-content`, `align-items`, `text-align`).
+- Applied tile coloring for Wordle-style feedback (tile-correct, tile-present, tile-absent).
+- Added hover and click effects for level select and game buttons.
+- Adjusted spacing, sizing, and layout across pages for a cohesive design.
 
-Assigned IDs and classes to HTML elements for easy targeting by CSS and JavaScript.
+* JavaScript
+- Developed a timer that persists across refresh, starting at 0:00.
+- Ensured page navigation resets scroll to the top.
+- Prevented scrolling behind pop-ups for better UX.
 
-Laid out pop-ups and modal structures for rules.
-
-Cleaned up HTML for consistency and fixed syntax issues.
-
-CSS (Added ~350 lines)
-
-Styled main pages, including colors, layouts, grids, and structures.
-
-adding box-sizing:border-box for proper spacing
-
-using vh instead of px in all backgrounds for flexibility on bigger/smaller screens.
-
-Adjusted grid dimensions adding cells to the html and adjusting sizes. 
-
-aligned the timer with the grid using "display:grid: options and margins.
-
-styled the homepage “How to Play” section making transparent backgrounds for icons and box.
-
-Designed and sized buttons using "display:grid" twice(6 fruit buttons + enter button) using background image centering plus photoshop and proper rations for a nice polish, ensuring proper layout and user interaction effects using translateY and brightness.
-
-Ensured home and help buttons had appropriate size and positioning using display:flex and flex-start.
-
-adding containers to center texts and all items commands like justify content text align and align items.
-
-Applied tile coloring for Wordle-style feedback (tile-correct, tile-present, tile-absent).
-
-Added hover and click effects for level select and game buttons to improve user feedback.
-
-Adjusted spacing, sizing, and layout across pages for a cohesive design using padding margins and grids.
-
-JavaScript
-
-Developed a timer function that persists across refresh and starts at 0:00 by default.
-
-Ensured page navigation resets scroll to the top on load.
-
-Prevented scrolling behind pop-ups to improve UX.
-
-
-Collaboration / Support
-
-Integrated layout, CSS, and timer functionality with the core game engine.
-
-Prepared the structure for dynamic updates by JavaScript game logic.
-Collaboration / Support
-
-Worked closely with the team to integrate layout, CSS, and timer functionality with the core game engine.
-Ensured the structure was ready for dynamic updates by JavaScript game logic.
+* Collaboration / Support
+- Integrated layout, CSS, and timer functionality with the core game engine.
+- Prepared structure for dynamic updates by JavaScript game logic.
