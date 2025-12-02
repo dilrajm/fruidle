@@ -141,10 +141,13 @@ function innitGame() {
     showPage("Homepage")
 }
 
-function startlevel(level) {
+//Homepage navigation
+function goToLevel(level) {
     // Make sure both popups are hidden when starting a level
     losePopup.classList.remove("active");
     winPopup.classList.remove("active");
+    // Also hide any feedback messages
+    hideAllFeedback();
     document.body.style.overflow = "auto";
     
     if (intervalID) {
@@ -156,6 +159,86 @@ function startlevel(level) {
     }
     else{
         showPage("Level_"+level);
+    }
+}
+
+// Feedback messages based on try number
+const FEEDBACK_MESSAGES = {
+    1: "Too_easy",    // First try
+    2: "Breeze",      // Second try  
+    3: "Good_work",   // Third try
+    4: "Fourth",      // Fourth try
+    5: "Too_close"    // Fifth try (last try)
+};
+
+// Function to show feedback message
+function showFeedbackMessage(tryNumber) {
+    const feedbackId = FEEDBACK_MESSAGES[tryNumber];
+    if (!feedbackId) {
+        // If somehow we have more than 5 tries, use default
+        showWinPopup();
+        return;
+    }
+    
+    const feedbackElement = document.getElementById(feedbackId);
+    if (!feedbackElement) {
+        // Fallback if element doesn't exist
+        showWinPopup();
+        return;
+    }
+
+    // Lock page interactions.
+    lockPageInteractions();
+    
+    // Show the feedback bar
+    feedbackElement.classList.add('show');
+    
+    // Wait for slide-down animation to complete, then wait 2 seconds, then slide up
+    setTimeout(() => {
+        // Slide up after 2 seconds
+        setTimeout(() => {
+            feedbackElement.classList.remove('show');
+            
+            // Wait for slide-up animation to complete, then show win popup
+            setTimeout(() => {
+                showWinPopup();
+                // Unlock page after
+                unlockPageInteractions();
+            }, 500); // Wait for slide-up animation (0.5s)
+            
+        }, 2000); // Show message for 2 seconds
+        
+    }, 100); // Small delay to ensure slide-down starts
+}
+
+// Function to hide all feedback messages (cleanup)
+function hideAllFeedback() {
+    document.querySelectorAll('.temp-feedback').forEach(feedback => {
+        feedback.classList.remove('show');
+    });
+}
+
+// Add temporary overlay to verbal feedback to block interactions during animation
+function lockPageInteractions() {
+    const overlay = document.createElement('div');
+    overlay.id = 'feedback-overlay';
+    overlay.style.cssText = `
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 99997; /* Just below feedback (99998) */
+        background: transparent;
+    `;
+    document.body.appendChild(overlay);
+}
+
+// To restore buttons
+function unlockPageInteractions() {
+    const overlay = document.getElementById('feedback-overlay');
+    if (overlay) {
+        overlay.remove();
     }
 }
 
@@ -174,6 +257,9 @@ function showPage(pageID){
     losePopup.classList.remove("active");
     winPopup.classList.remove("active");
     document.body.style.overflow = "auto";
+
+    // Also hide any feedback messages
+    hideAllFeedback();
     
     // Makes sure refresh stays on current page.
     window.location.hash = pageID;
@@ -462,8 +548,15 @@ function submitRow() {
         result.innerText="Time: " + timers.innerText;
         console.log("WIN!");
         lockButtons(); //freeze gameplay
-        // Show win popup
-        showWinPopup();
+        
+        // Determine which feedback message to show based on try number
+        const tryNumber = game.row + 1; // row is 0-indexed, so add 1
+        showFeedbackMessage(tryNumber);
+        
+        // Don't show win popup immediately - wait for feedback to complete
+
+        // showWinPopup() will be called after feedback animation completes
+
         return;
     }
 

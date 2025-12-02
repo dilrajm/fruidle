@@ -132,20 +132,34 @@ div#How_to_play {
     display: none;
 }
 
+
 .temp-feedback {
-    position:fixed;
-    top: 5px;
-    left:100px;
-    height:30px;
+    position: fixed;
+    top: -100px; /* Start hidden above screen */
+    left: 50%;
+    transform: translateX(-50%);
+    height: 60px;
     text-align: center;
     background-color: #ffffff;
-    color:black;
-    width:60%;
+    color: black;
+    width: 80%;
+    max-width: 500px;
     font-weight: bold;
-    font-size:1.5rem;
-    z-index: 99999;
-    display: none;
+    font-size: 1.8rem;
+    z-index: 99998; /* Below win/lose popups (99999) but above everything else */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 30px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    transition: top 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55); /* Bouncy animation */
 }
+
+/* When active, slide down from top */
+.temp-feedback.show {
+    top: 20px; 
+}
+
 #Win_popup {
     width:100%;
     height:100%;
@@ -606,4 +620,8 @@ img.kiwi,img.melon ,img.pear {
 #Win_popup p {
     font-size: 1.5rem;
     margin: 0;
+}
+
+#Win_popup {
+    z-index: 100000 !important; 
 }

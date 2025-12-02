@@ -65,7 +65,9 @@ Vinuk Dahanak:
   - Coded to ensure buttons work on refresh. 
   - Coded the win pop up and lose pop up on win and lose condition.
   - Coded the try again button. 
-  - Coded the high score tracking functionality by session.  
+  - Coded the high score tracking functionality by session. 
+  - Coded the temporary verbal feedback, depending on how well user did with animation.
+  - Made syntax tweaks to Javascript.  
 
 
 Dilraj Mukkar:
