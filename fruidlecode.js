@@ -7,12 +7,6 @@ window.onload=function(){
     if (hash) {
         showPage(hash);
 
-        // Wait for DOM to load, then start timer
-        setTimeout(() => {
-            if(hash.startsWith('Level_')) {
-                timer();
-            }
-        }, 100);
 
     } else {
         // If no saved page load homepage
@@ -62,8 +56,6 @@ function startlevel(level) {
     }
     else{
         showPage("Level_"+level);
-        // Start timer immediately for navigation purposes.
-        setTimeout(() =>timer(), 50);
     }
 }
 
@@ -83,7 +75,20 @@ function showPage(pageID){
 
     // Makes sure new page scrolls to top.
     window.scrollTo(0, 0);
+    const timerEl = document.getElementById(pageID).querySelector(".timer");
+
+    if (timerEl) timerEl.innerText = "00:00";
+
+    if (intervalID) {
+        clearInterval(intervalID);
+        intervalID = null;
+    }
 }
+const fruits=document.querySelectorAll(".fruit");
+fruits.forEach(button =>{
+    button.addEventListener("click",timer);
+});
+
 
 function timer() {
     const activePage = document.querySelector('.page.active');
@@ -91,6 +96,8 @@ function timer() {
         console.log("No active page found");
         return;
     }
+    if (intervalID !== null) return;
+
     
     const output = activePage.querySelector('.timer');
     if (!output) {
@@ -203,9 +210,6 @@ function startlevel(levelNum) {
 
     //Show correct level page
     showPage("Level_" + levelNum);
-
-    //Start timer after slight delay
-    setTimeout(() => timer(), 50);
 
     //now start the Fruidle game logic setup
     const info = LEVELS[levelNum];

@@ -58,6 +58,7 @@ section.page {
 
 .timer {
     margin-left: 100px;
+    width:110px;
     font-size: 48px;
     color:aliceblue;
 }
