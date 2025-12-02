@@ -421,6 +421,7 @@ function submitRow() {
 
     //if out of rows, then you lose
     if (game.row >= game.maxTries) {
+        clearInterval(intervalID)
         console.log("LOSE");
         lockButtons(); //freeze gameplay
         // Show lose popup
