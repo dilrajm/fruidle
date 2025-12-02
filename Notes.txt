@@ -58,7 +58,7 @@ Vinuk Dahanak
 * CSS
 - Styled homepage elements, help button and pop-up close buttons.
 - Made minor adjustments to spacing and sizing throughout the page.
-- Styled win and lose pop-ups.
+- Styled win, lose and temporary verbal feedback pop-ups.
 
 * JavaScript
 - Ensured page refresh retains the current view instead of returning to homepage.
