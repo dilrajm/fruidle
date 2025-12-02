@@ -674,3 +674,4 @@ function enableButtons() {
     if (game.delBtn) game.delBtn.disabled = false;
     if (game.goBtn) game.goBtn.disabled = false;
 }
+export { checkGuess, makeSecret, HighScoreManager } ;
