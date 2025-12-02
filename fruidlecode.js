@@ -1,4 +1,9 @@
 let intervalID = null;
+// Reference to lose popup
+const losePopup = document.getElementById("Lose_popup");
+const closeLosePopup = losePopup.querySelector(".close-button");
+const tryAgainButton = document.getElementById("Again");
+
 window.onload=function(){
     //load the homepage first
 
@@ -19,13 +24,29 @@ window.onload=function(){
     const modal= document.getElementById("HowToPlayModal");
     const closeButton=document.getElementById("closeHowToPlay");
 
+    window.addEventListener('click', (e) => {
+    // Close How to Play modal if clicking backdrop
+    if (e.target === modal) {
+        modal.style.display = "none";
+        document.body.style.overflow = "auto";
+    }
+    
+    // Close Lose popup if clicking backdrop
+    if (e.target === losePopup) {
+        losePopup.classList.remove("active");
+        document.body.style.overflow = "auto";
+    }
+});
+
     helpButtons.forEach(button=>{
         button.onclick=()=>{
              modal.style.display="flex";
              // Prevent scrolling behind pop-up
-             this.document.body.style.overflow = "hidden";
+             document.body.style.overflow = "hidden";
         };
     });
+
+
 
     closeButton.onclick=()=>{
         modal.style.display="none";
@@ -33,12 +54,19 @@ window.onload=function(){
         document.body.style.overflow = "auto";
     };
 
-    window.onclick = (e) =>{
-        if(e.target===modal){
-            modal.style.display = "none";
-            // Scrolling returns once pop-up is closed.
-            document.body.style.overflow = "auto";
-        }
+    
+    // Close lose popup when X is clicked
+    closeLosePopup.onclick = () => {
+        losePopup.classList.remove("active");
+        document.body.style.overflow = "auto";
+    };
+    
+    // Try again button functionality
+    tryAgainButton.onclick = () => {
+        losePopup.classList.remove("active");
+        document.body.style.overflow = "auto";
+        // Restart the current level
+        startlevel(game.level);
     };
 }
 function innitGame() {
@@ -47,6 +75,10 @@ function innitGame() {
 }
 
 function startlevel(level) {
+    // Make sure lose popup is hidden when starting a level
+    losePopup.classList.remove("active");
+    document.body.style.overflow = "auto";
+    
     if (intervalID) {
         clearInterval(intervalID);
         intervalID = null;
@@ -69,6 +101,10 @@ function showPage(pageID){
     });
     //Show page
     document.getElementById(pageID).classList.add("active");
+
+    // Makes sure lose popup disapears after clicking home
+    losePopup.classList.remove("active");
+    document.body.style.overflow = "auto";
     
     // Makes sure refresh stays on current page.
     window.location.hash = pageID;
@@ -343,18 +379,13 @@ function submitRow() {
 
     paintRow(game.row, res); //color row tiles 
 
-    
-    /**WIN LOSE CONDITION, need to play around with this, just add a function ********************************************@Northside*************************************
-     * that shows the win/lose popop that we coded in the html
-     * 
-    */
-
     //Check if all are green, then you win
     let win = res.every(v => v === "correct");
 
-    if (win) {                               //HERE @Northside
+    if (win) {
         console.log("WIN!");
         lockButtons(); //freeze gameplay
+        // Win popup would go here (not implemented in this version)
         return;
     }
 
@@ -362,10 +393,12 @@ function submitRow() {
     game.row++;
     game.col = 0;
 
-    //if out of rows, then you lose           //AND HERE @Northside
+    //if out of rows, then you lose
     if (game.row >= game.maxTries) {
         console.log("LOSE");
         lockButtons(); //freeze gameplay
+        // Show lose popup
+        showLosePopup();
     }
 }
 
@@ -419,6 +452,13 @@ function paintRow(r, res) {
             c.classList.add("tile-absent");
         }
     }
+}
+
+//Simple function to show lose popup
+function showLosePopup() {
+    losePopup.classList.add("active");
+    // Prevent scrolling behind popup
+    document.body.style.overflow = "hidden";
 }
 
 //When game ends, stop all interaction

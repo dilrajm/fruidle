@@ -40,7 +40,7 @@ section.page {
     background-repeat: no-repeat;
     background-position: center;
     min-height: 100vh; 
-    padding-bottom: 10vw;           /* ensures level fills viewport */
+    padding-bottom: 2vw;           /* ensures level fills viewport */
 }
 #container {
   max-width: 100%;
@@ -474,4 +474,113 @@ img.kiwi,img.melon ,img.pear {
 /* grey – fruit not in the secret at all */
 .cell.tile-absent {
     background-color: rgba(111, 128, 144, 0.7);
+}
+
+#Win_popup,
+#Lose_popup {
+    display: none !important; /* REMOVED the second display: flex here */
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.78);
+    backdrop-filter: blur(8px);
+    z-index: 99999;
+
+    /* Pure vertical centering */
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+/* Specific styling for Lose popup to stack vertically */
+#Lose_popup .popup-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 24px; /* Adjust spacing between items */
+    max-width: 90%;
+}
+
+/* Make sure images scale properly */
+#Lose_popup #lost {
+    max-width: 80%;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+/* Style for highscore text */
+#Lose_popup p {
+    font-size: 1.5rem;
+    margin: 0;
+}
+
+/* Style for Try Again button */
+#Lose_popup #Again {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    margin: 0;
+    transition: all 0.3s ease; /* Smooth transition for all properties */
+}
+
+#Lose_popup #try {
+    max-width: 200px;
+    height: auto;
+    transition: all 0.3s ease; /* Smooth transition for the image too */
+    filter: brightness(1); /* Default brightness */
+}
+
+/* Hover effect - gets bigger and darkens */
+#Lose_popup #Again:hover #try {
+    transform: scale(1.1); /* 10% bigger */
+    filter: brightness(0.85); /* Darkens the image */
+}
+
+/* Active/Click effect - darkens more and gets slightly smaller */
+#Lose_popup #Again:active #try {
+    transform: scale(0.95); /* Slightly smaller than original */
+    filter: brightness(0.7); /* Even darker */
+    transition: all 0.1s ease; /* Faster transition for click */
+}
+
+#Win_popup.active,
+#Lose_popup.active {
+    display: flex !important; /* This will apply flex when active */
+}
+
+/* Make text and images pop nicely on the dark background */
+#Win_popup *,
+#Lose_popup * {
+    color: white;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.8);
+}
+
+/* Close button – top-right corner of the screen */
+#Win_popup .close-button,
+#Lose_popup .close-button {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    background: #f0f0f0; 
+    backdrop-filter: blur(10px);
+    border: none;
+    border-radius: 50%;
+    font-size: 28px;
+    font-weight: bold;
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    z-index: 100000; /* Ensure it's above everything */
+}
+
+#Win_popup .close-button:hover,
+#Lose_popup .close-button:hover {
+    background: #ff4444;
+    transform: scale(1.15);
 }
