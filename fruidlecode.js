@@ -141,24 +141,24 @@ function showPage(pageID){
         intervalID = null;
     }
 }
-const fruits=document.querySelectorAll(".fruit");
+const fruits=document.querySelectorAll(".fruit"); //wait till a fruit button is pressed to start timer
 fruits.forEach(button =>{
     button.addEventListener("click",timer);
 });
 
 
 function timer() {
-    const activePage = document.querySelector('.page.active');
+    const activePage = document.querySelector('.page.active');//select the timer from the active page since theres multiple
     if (!activePage) {
         console.log("No active page found");
         return;
     }
-    if (intervalID !== null) return;
+    if (intervalID !== null) return; //let the timer run after first button is pressed
 
     
     const output = activePage.querySelector('.timer');
     if (!output) {
-        console.log("No timer element found on active page");
+        console.log("No timer element found on active page");//debug log
         return;
     }
     
@@ -167,7 +167,7 @@ function timer() {
     let count = 0;
     let mcount = 0;
     
-    if (intervalID) {
+    if (intervalID) { //when a new one starts clear the old one
         clearInterval(intervalID);
         intervalID = null;
     }
