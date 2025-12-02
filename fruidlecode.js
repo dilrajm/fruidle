@@ -5,16 +5,20 @@ const closeLosePopup = losePopup.querySelector(".close-button");
 const tryAgainButton = document.getElementById("Again");
 
 window.onload=function(){
-    //load the homepage first
+    // Load the correct page based on URL hash (supports refresh)
 
-    // Check if there is a saved page in URL first
     const hash = window.location.hash.substring(1);
-    if (hash) {
-        showPage(hash);
 
-
-    } else {
-        // If no saved page load homepage
+    if (hash && hash.startsWith('Level_')) {
+        const levelNum = parseInt(hash.replace('Level_', ''), 10);
+        if (levelNum >= 1 && levelNum <= 3) {
+            startlevel(levelNum);           // Does everything: show page + init game + start timer
+        } else {
+            innitGame();
+        }
+    } 
+    else {
+        // No hash or "Homepage" → show home
         innitGame();
     }
     
@@ -385,7 +389,7 @@ function submitRow() {
     if (win) {
         console.log("WIN!");
         lockButtons(); //freeze gameplay
-        // Win popup would go here (not implemented in this version)
+        
         return;
     }
 
