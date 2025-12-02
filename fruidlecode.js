@@ -172,17 +172,16 @@ function timer() {
         intervalID = null;
     }
     
-    const result = document.getElementById("result");
-    
     // Reset timer display first
     output.innerText = "00:00";
-    
+    // count minutes and seconds
     intervalID = setInterval(() => {
         count++;
         if (count == 60) {
             mcount++;
             count = 0;
         }
+        //show it each second
         output.innerText = `${mcount.toString().padStart(2, '0')}:${count.toString().padStart(2, '0')}`;
     }, 1000);
 }
@@ -402,8 +401,13 @@ function submitRow() {
 
     //Check if all are green, then you win
     let win = res.every(v => v === "correct");
+    const result = document.getElementById("result");
+    const activePage=document.querySelector(".page.active")
+    const timers = activePage.querySelector(".timer");
 
     if (win) {
+        clearInterval(intervalID);
+        result.innerText="Time: " + timers.innerText;
         console.log("WIN!");
         lockButtons(); //freeze gameplay
         // Show win popup
