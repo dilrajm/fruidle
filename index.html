@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="En">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="fruidlestyle.css">
+    <link rel="icon" href="Fruidle_Images/Favicon.png">
+    <title>Play Fruidle</title>
+    <link href="https://fonts.googleapis.com/css2?family=VT323&family=Pixelify+Sans&family=Tiny5&display=swap" rel="stylesheet">  
+</head>
+
+<body onload="innitGame()">
+<div id="container">
+
+    <!-----------------------------------HOME PAGE --------------------------------->
+    <section id="Homepage" class="page">
+        <h2 id="image"><img alt="Fruidle" id="title" src="Fruidle_Images/title.png"></h2>
+
+        <div id="How_to_play">
+            <h3>How to Play</h3>
+                <p class="how">
+                    Use the fruit keyboard to guess fruit sequence in 5 tries!
+                    Guesses must be 3, 5 or 7 fruits long depending on the level.
+                    The colour of the tiles will change to show how close your guess was to the fruit sequence.
+                </p>
+                <p>Examples</p> 
+                <div class="Example">
+                    <img alt="Pear" class="slot1" src="Fruidle_Images/pear.png">
+                    <img alt="Kiwi" class="slot2" src="Fruidle_Images/kiwi.png">
+                    <img alt="Green Apple" class="slot3" src="Fruidle_Images/grn_apple.png">
+                </div>
+                <p class="ex">The pear <span><img alt="Pear" class="pear" src="Fruidle_Images/pear.png"></span> is in the sequence and in the right spot.</p>
+
+                <div class="Example">
+                    <img alt="Kiwi" class="slot4" src="Fruidle_Images/kiwi.png">
+                    <img alt="Melon" class="slot5" src="Fruidle_Images/melon.png">
+                    <img alt="Green Apple" class="slot6" src="Fruidle_Images/grn_apple.png">
+                </div>
+                <p class="ex">The melon <span><img alt="Melon" class="melon" src="Fruidle_Images/melon.png"></span> is in the sequence but in the wrong spot.</p>
+
+                <div class="Example">
+                    <img alt="Green Apple" class="slot7" src="Fruidle_Images/grn_apple.png">
+                    <img alt="Green Apple" class="slot8" src="Fruidle_Images/grn_apple.png">
+                    <img alt="Kiwi" class="slot9" src="Fruidle_Images/kiwi.png">
+                </div>
+                <p class="ex">The kiwifruit <span><img alt="Kiwi" class="kiwi" src="Fruidle_Images/kiwi.png"></span> is not in the sequence in any spot.</p> 
+        </div>
+
+        <div id="Level_Select">
+            <h1>Select Level</h1>
+                <button class="Level_1" onclick="startlevel(1)"></button>
+                <button class="Level_2" onclick="startlevel(2)"></button>
+                <button class="Level_3" onclick="startlevel(3)"></button>
+        </div>
+    </section>
+
+
+    <!----------------------------------------LEVEL 1------------------------------------>
+
+    <section id="Level_1" class="page">
+
+        <div class="Top_Bar">
+            <img alt="Help" class="help" title="How to Play" src="Fruidle_Images/white_question_mark_button.png"> <img alt="Home" class="home" title="Homepage" onclick="goToLevel(0)" src="Fruidle_Images/white_home_button.png">
+        </div>
+       
+        <h2>Level 1</h2>
+
+        <div class="wrapper">
+         
+         <div class="grid">
+            <div class="row">
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+            </div>
+            <div class="row">
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+            </div>
+            <div class="row">
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+            </div>
+            <div class="row">
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+            </div>
+            <div class="row">
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+            </div>
+         </div>
+         <div class="timer"></div>
+        </div>
+        <div class="buttons_1">
+            <div class="buttons_2">
+                   <button class="fruit" data-fruit="🍏"><img alt="Green Apple" class="fruit_button" src="Fruidle_Images/grn_apple.png"></button>
+                    <button class="fruit" data-fruit="🍐"><img alt="Pear" class="fruit_button" src="Fruidle_Images/pear.png"></button>
+                    <button class="fruit" data-fruit="🥝"><img alt="Kiwi" class="fruit_button" src="Fruidle_Images/kiwi.png"></button>
+                    <button class="fruit" data-fruit="🍈"><img alt="Melon" class="fruit_button" src="Fruidle_Images/melon.png"></button>
+                    <button class="del"></button>
+            </div>
+            <button class="go"></button>
+        </div>
+
+    </section>
+
+    <!------------------------------------------LEVEL 2------------------------------------->
+
+    <section id="Level_2" class="page">
+
+        <div class="Top_Bar">
+            <img alt="Help" class="help" title="How to Play" src="Fruidle_Images/white_question_mark_button.png"> <img alt="Home" class="home" title="Homepage" onclick="goToLevel(0)" src="Fruidle_Images/white_home_button.png">
+        </div>
+        
+        <h2>Level 2</h2>
+
+        
+        <div class="wrapper">
+         <div class="grid">
+            <div class="row">
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+            </div>
+            <div class="row">
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+            </div>
+            <div class="row">
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+            </div>
+            <div class="row">
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+            </div>
+            <div class="row">
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+            </div>
+         </div>
+         <div class="timer"></div>
+        </div>
+
+        <div class="buttons_1">
+            <div class="buttons_2">
+             <button class="fruit" data-fruit="🍋"><img alt="Lemon" class="fruit_button" src="Fruidle_Images/lemon.png"></button>
+             <button class="fruit" data-fruit="🍌"><img alt="Banana" class="fruit_button" src="Fruidle_Images/banana.png"></button>
+             <button class="fruit" data-fruit="🍊"><img alt="Tangerine" class="fruit_button" src="Fruidle_Images/tangerine.png"></button>
+             <button class="fruit" data-fruit="🍍"><img alt="Pineapple" class="fruit_button" src="Fruidle_Images/pineapple.png"></button>
+             <button class="del"></button>
+            </div>
+            <button class="go"></button>
+        </div>
+
+
+    </section>
+
+    <!----------------------------------------LEVEL 3------------------------------------------>
+
+    <section id="Level_3" class="page">
+
+        <div class="Top_Bar">
+            <img alt="Help" class="help" title="How to Play" src="Fruidle_Images/white_question_mark_button.png"> <img alt="Home" class="home" title="Homepage" onclick="goToLevel(0)" src="Fruidle_Images/white_home_button.png">
+        </div>
+        
+        <h2>Level 3</h2>
+
+        
+        <div class="wrapper">
+         <div class="grid">
+            <div class="row">
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+            </div>
+            <div class="row">
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+            </div>
+            <div class="row">
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+            </div>
+            <div class="row">
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+            </div>
+            <div class="row">
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+            </div>
+         </div>
+         <div class="timer"></div>
+        </div>
+
+        <div class="buttons_1">
+            <div class="buttons_2">
+             <button class="fruit" data-fruit="🍎"><img alt="Apple" class="fruit_button" src="Fruidle_Images/apple.png"></button>
+             <button class="fruit" data-fruit="🍓"><img alt="Strawberry" class="fruit_button" src="Fruidle_Images/strawberry.png"></button>
+             <button class="fruit" data-fruit="🍒"><img alt="Cherries" class="fruit_button" src="Fruidle_Images/cherries.png"></button>
+             <button class="fruit" data-fruit="🍉"><img alt="Watermelon" class="fruit_button" src="Fruidle_Images/watermelon.png"></button>
+             <button class="del"></button>
+            </div>   
+            <button class="go"></button>
+        </div>
+    </section>
+
+    <!---FEEDBACK POPUPS-->
+
+      <div id="Too_easy" class="temp-feedback">Too Easy!</div>
+      <div id="Breeze" class="temp-feedback">That was a Breeze...</div>
+      <div id="Good_work" class="temp-feedback">Good Work!</div>
+      <div id="Fourth" class="temp-feedback">Fourth Times the Charm...</div>
+      <div id="Too_close" class="temp-feedback">Too Close!</div>
+
+    <!---WIN/LOSE POPUPS--->
+
+    <div id="Win_popup">
+    <button class="close-button">✕</button>
+    
+    <!-- Main content container for vertical stacking -->
+    <div class="popup-content">
+        <img alt="You Win" id="won" src="Fruidle_Images/you_win.png">
+        <p>Highscore: <span class="top_count"></span></p>
+        <div id="result"></div>
+        <img alt="Home" title="Homepage" class="home" onclick="goToLevel(0)" src="Fruidle_Images/white_home_button.png">
+    </div>
+</div>
+
+    <div id="Lose_popup">
+        <button class="close-button">✕</button>
+  
+        <!-- Main content container for vertical stacking -->
+        <div class="popup-content">
+        <img alt="You Lose" id="lost" src="Fruidle_Images/you_lose.png">
+        <p>Highscore: <span class="top_count"></span></p>
+        <button id="Again">
+        <img alt="Try Again" id="try" src="Fruidle_Images/try_again.png">
+        </button>
+        <img alt="Home" title="Homepage" class="home" onclick="goToLevel(0)" src="Fruidle_Images/white_home_button.png">
+    </div>
+</div>
+      
+</div> <!--END CONTAINER-->
+
+                <!---RULES POPUPS---> 
+<!-----------------MODAL CONTAINER----------------------->
+<div id ="HowToPlayModal" class = "modal-overlay">
+    <div class ="modal-content">
+        <span id ="closeHowToPlay" class="close-button">✕</span>
+
+        <div id="how" class="How_to_play">
+            <h3>How to Play</h3>
+            <p class="how">
+                Use the fruit keyboard to guess fruit sequence in 5 tries!
+                Guesses must be 3, 5 or 7 fruits long depending on the level.
+                The colour of the tiles will change to show how close your guess was to the fruit sequence.
+            </p>
+            Examples 
+            <div class="Example">
+                <img alt="Pear" class="slot1" src="Fruidle_Images/pear.png">
+                <img alt="Kiwi" class="slot2" src="Fruidle_Images/kiwi.png">
+                <img alt="Green Apple" class="slot3" src="Fruidle_Images/grn_apple.png">
+            </div>
+            The pear <span><img alt="Pear" class="pear" src="Fruidle_Images/pear.png"></span> is in the sequence and in the right spot.
+            <div class="Example">
+                <img alt="Kiwi" class="slot4" src="Fruidle_Images/kiwi.png">
+                <img alt="Melon" class="slot5" src="Fruidle_Images/melon.png">
+                <img alt="Green Apple" class="slot6" src="Fruidle_Images/grn_apple.png">
+            </div>
+            The melon <span><img alt="Melon" class="melon" src="Fruidle_Images/melon.png"></span> is in the sequence but in the wrong spot.
+            <div class="Example">
+                <img alt="Green Apple" class="slot7" src="Fruidle_Images/grn_apple.png">
+                <img alt="Green Apple" class="slot8" src="Fruidle_Images/grn_apple.png">
+                <img alt="Kiwi" class="slot9" src="Fruidle_Images/kiwi.png">
+            </div>
+            The kiwifruit <span><img alt="Kiwi" class="kiwi" src="Fruidle_Images/kiwi.png"></span> is not in the sequence in any spot.
+        </div>
+    </div>
+</div>
+<script src="fruidlecode.js"></script>
+</body>
+</html>
+
+
+
+
+
+
